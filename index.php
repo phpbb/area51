@@ -6,6 +6,7 @@
 	<meta name="keywords" content="Forum software, discussion software, free, opensource, development" />
 	<title>Area51 @ phpBB.com</title>
 	<link href="area51.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="header.css" media="all" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<div id="wrapper">

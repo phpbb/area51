@@ -1,0 +1,48 @@
+
+#phpbb-header-bar {
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	background:#114070 none repeat scroll 0 0;
+	display:block;
+	height:38px;
+	position:relative;
+	width:100%;
+}
+#phpbb-header-bar ul.phpbb-menu {
+	float:left;
+	font-family:arial,FreeSans,Helvetica,sans-serif;
+	font-size:12px;
+	list-style-type:none;
+	margin:0px 0 0 10px;
+	padding:0;
+}
+#phpbb-header-bar .phpbb-menu li {
+	display:inline;
+	margin:0;
+}
+#phpbb-header-bar .phpbb-menu li a {
+	background-color:#325C82;
+	color:#F0F0F0;
+	display:block;
+	float:left;
+	line-height:17px;
+	margin-right:8px;
+	margin-top:13px;
+	padding:4px 0;
+	text-align:center;
+	text-decoration:none;
+	width:100px;
+}
+#phpbb-header-bar .phpbb-menu li a:hover, #phpbb-header-bar .phpbb-menu li.active a {
+	background-color:#3C78B5;
+	color:#FFFFFF;
+}
+
+#phpbb-header-bar .phpbb-menu .phpbb-logo a:hover, #phpbb-header-bar .phpbb-menu .phpbb-logo a {
+	background-color:#114070;
+	margin-top:0px;
+	margin-right:8px;
+	padding-top:3px;
+	padding-bottom:0px;
+}
