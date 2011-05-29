@@ -4,7 +4,7 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="description" content="area51 @ phpBB - The development site of phpBB Group" />
 	<meta name="keywords" content="Forum software, discussion software, free, opensource, development" />
-	<title>area51 @ phpBB.com</title>
+	<title>Area51 @ phpBB.com</title>
 	<link href="area51.css" media="all" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -25,17 +25,16 @@
 		</div>
 
 		<div id="header">
-			<h1>area51 @ phpBB.com</h1>
+			<h1>Welcome to Area51, home to phpBB development</h1>
 		</div>
 
 		<div id="main">
 			<div id="content">
-				<h2>Welcome to area51, home to development of phpBB Group products.</h2>
 
 				<p>Remember, this is the home to <b>development</b> of phpBB. If you want the latest stable release of the software, need support, etc. please visit the main site at <a href="http://www.phpbb.com/">www.phpbb.com</a>. Please do not post support questions on the boards here!</p>
 
-				<p style="font-weight:bold;"><a href="/phpBB/">Visit the Development Board</a></p>
-		    
+				<p style="font-weight:bold;"><a href="/phpBB/">Visit the Development Discussion Board</a></p>
+
 				<div class="box">
 					<h3>phpBB Development Sites and Tools</h3>
 					<ul>
