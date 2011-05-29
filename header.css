@@ -1,3 +1,12 @@
+body {
+	margin:0;
+	padding:0;
+}
+
+* html #content {
+	margin-top:0;
+}
+
 
 #phpbb-header-bar {
 	-moz-background-clip:border;
@@ -45,4 +54,19 @@
 	margin-right:8px;
 	padding-top:3px;
 	padding-bottom:0px;
+}
+
+#phpbb-sub-header {
+	background-color:#3C78B5;
+	color:#F8F8F8;
+	height:2.4em;
+	margin:0;
+	padding:4px 8px 0 6px;
+	position:relative;
+}
+#phpbb-sub-header a {
+	color:#F8F8F8;
+}
+#phpbb-sub-header h1 a.ancestor {
+	font-size:80%;
 }

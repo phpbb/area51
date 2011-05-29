@@ -44,21 +44,6 @@ h4, .wiki h3 {
 	background:white none repeat scroll 0 0;
 }
 
-#header {
-	background-color:#3C78B5;
-	color:#F8F8F8;
-	height:2.4em;
-	margin:0;
-	padding:4px 8px 0 6px;
-	position:relative;
-}
-#header a {
-	color:#F8F8F8;
-}
-#header h1 a.ancestor {
-	font-size:80%;
-}
-
 #content {
 	background-color:#FFFFFF;
 /*	border-right:1px solid #DDDDDD;*/
