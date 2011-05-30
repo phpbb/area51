@@ -26,7 +26,7 @@
 		</div>
 
 		<div id="phpbb-sub-header">
-			<h1>Welcome to Area51, home to phpBB development</h1>
+			<h1>Welcome to Area51, home of phpBB development</h1>
 		</div>
 
 		<div id="main">
