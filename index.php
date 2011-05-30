@@ -12,7 +12,7 @@
 	<div id="wrapper">
 		<div id="phpbb-header-bar">
 		<ul class="phpbb-menu">
-			<li class="phpbb-logo"><a style="width:222px;" href="http://area51.phpbb.com/"><img src="/images/area51.png" alt="area51 @ phpBB" title="area51.phpbb.com" /></a></li>
+			<li class="phpbb-logo"><a href="http://area51.phpbb.com/"><img src="/images/area51.png" alt="area51 @ phpBB" title="area51.phpbb.com" /></a></li>
 			<li class="active"><a href="http://area51.phpbb.com">Home</a></li>
 			<li><a href="http://tracker.phpbb.com/secure/Dashboard.jspa">Tracker</a></li>
 			<li><a href="http://wiki.phpbb.com/">Wiki</a></li>
@@ -20,7 +20,7 @@
 			<li><a href="http://code.phpbb.com/">Code Forge</a></li>
 			<li><a href="http://area51.phpbb.com/phpBB/">Discussion</a></li>
 		</ul>
-		<div style="float:right;margin-top:3px;">
+		<div id="exit-phpbb">
 			<a href="http://www.phpbb.com/"><img src="/images/back_phpbb.png" alt="phpBB" title="www.phpbb.com" /></a>
 		</div>
 		</div>

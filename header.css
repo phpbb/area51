@@ -54,6 +54,13 @@ body {
 	margin-right:8px;
 	padding-top:3px;
 	padding-bottom:0px;
+	width:222px;
+}
+
+#exit-phpbb {
+	float:right;
+	margin-top:3px;
+	overflow:hidden;
 }
 
 #phpbb-sub-header {
