@@ -78,6 +78,8 @@ body {
 	color:#F8F8F8;
 	font-size:20px;
 	font-weight:bold;
+	border-bottom:none;
+	padding-bottom:none;
 }
 
 #phpbb-sub-header h1 a.ancestor {
