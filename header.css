@@ -71,6 +71,7 @@ body {
 	height:2.4em;
 	margin:0;
 	padding:4px 8px 0 6px;
+	line-height:16px;
 	position:relative;
 }
 #phpbb-sub-header a, #phpbb-sub-header h1 {
