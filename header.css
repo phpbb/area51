@@ -23,7 +23,6 @@ body {
 #phpbb-header-bar ul.phpbb-menu {
 	float:left;
 	font-family:arial,FreeSans,Helvetica,sans-serif;
-	font-size:12px;
 	list-style-type:none;
 	margin:0px 0 0 10px;
 	padding:0;
@@ -33,6 +32,7 @@ body {
 	margin:0;
 }
 #phpbb-header-bar .phpbb-menu li a {
+	font-size:12px;
 	background-color:#325C82;
 	color:#F0F0F0;
 	display:block;
@@ -76,6 +76,8 @@ body {
 #phpbb-sub-header a, #phpbb-sub-header h1 {
 	font-family: "Trebuchet MS",Verdana,sans-serif;
 	color:#F8F8F8;
+	font-size:20px;
+	font-weight:bold;
 }
 
 #phpbb-sub-header h1 a.ancestor {
