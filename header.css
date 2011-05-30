@@ -36,12 +36,12 @@ body {
 	display:block;
 	float:left;
 	line-height:17px;
-	margin-right:8px;
+	margin-right:5px;
 	margin-top:13px;
 	padding:4px 0;
 	text-align:center;
 	text-decoration:none;
-	width:100px;
+	width:85px;
 }
 #phpbb-header-bar .phpbb-menu li a:hover, #phpbb-header-bar .phpbb-menu li.active a {
 	background-color:#3C78B5;
