@@ -60,7 +60,7 @@
 						Propose a new feature or a change in behaviour for discussion with the rest of the community. All big changes need to go through this process on the Development Discussion Board.
 					</li>
 					<li class="line-break full-line">
-						<b><a href="http://wiki.phpbb.com/Get_Involved#Participating_in_development_IRC_channel_and_area51" title="Participate">Participate in development IRC channel and area51</a></b><br />
+						<b><a href="http://wiki.phpbb.com/Get_Involved#Participating_in_development_IRC_channel_and_area51" title="Participate">Participate in development IRC channel and Area51</a></b><br />
 						phpBB's development is public. When developers want to discuss something, have a question or want to request feedback they do it either in the development IRC channel (#phpbb-dev on FreeNode) or on the Development Discussion Board. Everyone is welcome to participate in these discussions to whatever extent they want.
 					</li>
 				</ul>
