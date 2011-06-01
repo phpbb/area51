@@ -36,31 +36,31 @@
 				<p>You can help the project in many ways. Pick what suits your skills best, all contributions are much appreciated by the rest of the community. More detailed information on how to go about contributing is available on our <a href="http://wiki.phpbb.com/Get_Involved" title="Get Involved">Get Involved</a> wiki page.</p>
 				<ul class="contribution-list">
 					<li>
-						<b>Report bugs</b><br />
+						<b><a href="http://wiki.phpbb.com/Get_Involved#Reporting_Bugs" title="Reporting Bugs">Report bugs</a></b><br />
 						phpBB can only be improved if the developers are aware of the problems users encounter. Detailed descriptions of problems help contributors solve them quickly.
 					</li>
 					<li>
-						<b>Reproduce bugs and verify fixes</b><br />
-						Help identifying incorrectly reported bugs to speed up development. Test bugfixes to ensure they work as expected and do not have unintended side effects.
+						<b><a href="http://wiki.phpbb.com/Get_Involved#Reproducing_Bugs" title="Reproducing Bugs">Reproduce bugs and verify fixes</a></b><br />
+						Help identify incorrectly reported bugs to speed up development. Test bugfixes to ensure they work as expected and do not have unintended side effects.
 					</li>
 					<li class="line-break">
-						<b>Create patches</b><br />
+						<b><a href="http://wiki.phpbb.com/Get_Involved#Creating_.2F_Submitting_Patches" title="Creating / Submitting Patches">Submit patches</a></b><br />
 						Know how to work with PHP, CSS or HTML? Fix a bug or implement a feature yourself and prepare your patch to be merged into phpBB.
 					</li>
 					<li>
-						<b>Review patches</b><br />
+						<b><a href="http://wiki.phpbb.com/Get_Involved#Reviewing_Patches" title="Reviewing Patches">Review patches</a></b><br />
 						Help identify problems before they go into a released version of phpBB and reach our users. Review and test other contributors' patches to identify problems.
 					</li>
 					<li class="line-break">
-						<b>Discussing existing RFCs</b><br />
+						<b><a href="http://wiki.phpbb.com/Get_Involved#Discussing_Existing_RFCs" title="Discuss Existing RFCs">Discussing existing RFCs</a></b><br />
 						RFCs are enhancement proposals for future versions of phpBB. You can provide comments on these proposals as well as collaborate on their implementation at the Development Discussion Board.
 					</li>
 					<li>
-						<b>Create new RFCs</b><br />
+						<b><a href="http://wiki.phpbb.com/Get_Involved#Creating_New_RFCs" title="Creating new RFCs">Create new RFCs</a></b><br />
 						Propose a new feature or a change in behaviour for discussion with the rest of the community. All big changes need to go through this process on the Development Discussion Board.
 					</li>
 					<li class="line-break full-line">
-						<b>Participate in development IRC channel and area51</b><br />
+						<b><a href="http://wiki.phpbb.com/Get_Involved#Participating_in_development_IRC_channel_and_area51" title="Participate">Participate in development IRC channel and area51</a></b><br />
 						phpBB's development is public. When developers want to discuss something, have a question or want to request feedback they do it either in the development IRC channel (#phpbb-dev on FreeNode) or on the Development Discussion Board. Everyone is welcome to participate in these discussions to whatever extent they want.
 					</li>
 				</ul>
