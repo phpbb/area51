@@ -101,7 +101,7 @@ li p {
 	margin-top:0;
 }
 
-ul.section-list {
+ul.section-list, ul.contribution-list {
 	list-style:none;
 	margin:0px;
 	padding:0px;
@@ -111,6 +111,12 @@ ul.section-list {
 	float:left;
 	width:180px;
 	margin: 10px;
+}
+
+.contribution-list li {
+	float:left;
+	width: 380px;
+	margin:10px;
 }
 
 .section-list li ul {
@@ -130,8 +136,12 @@ ul.section-list {
 	padding-right:4px;
 }
 
-.section-list .line-break {
+li.line-break {
 	clear:both;
+}
+
+li.full-line {
+	width:780px;
 }
 
 .section-list img {
