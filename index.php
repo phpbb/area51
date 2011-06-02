@@ -69,7 +69,7 @@
 					<h2>Development Sites &amp; Tools</h2>
 					<ul class="section-list">
 						<li>
-							<a href="http://github.com/phpbb/" title="Github"><img src="" title="Github" alt="Github" /></a>
+							<a href="http://github.com/phpbb/" title="Github"><img src="images/github.png" title="Github" alt="Github" /></a>
 							<h2>Github</h2>
 							<p>phpBB's source code is hosted in <a href="http://git-scm.org/" title="Git">Git</a> repositories at Github. You can also find a number of other tools for phpBB or MOD development there.</p>
 						</li>
