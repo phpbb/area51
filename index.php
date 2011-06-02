@@ -92,7 +92,7 @@
 						<li class="line-break">
 							<a href="http://code.phpbb.com" title="Code Forge"><img src="" title="Code Forge" alt="Code Forge" /></a>
 							<h2>Code Forge</h2>
-							<p>The former home of phpBB still hosting subversion repository mirrors of our git repositories as well as a few utilities that haven't been moved over to git yet.</p>
+							<p>The former home of phpBB source code still hosts a few utilities that haven't been moved over to git yet and subversion mirrors of our git repositories.</p>
 						</li>
 						<li>
 							<img src="" title="Coding Guidelines" alt="Coding Guidelines" />
