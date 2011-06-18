@@ -40,7 +40,8 @@ class Page
 		</div>
 
 		<div id="phpbb-sub-header">
-			<div>
+			<div class="fixed-width">
+				<!-- <a href="/feed/" class="<?php if ($this->content->activeTab() == 'feed') echo 'active '; ?>phpbb-tab">Feed</a> -->
 				<a href="/stats/" class="<?php if ($this->content->activeTab() == 'stats') echo 'active '; ?>phpbb-tab">Statistics</a>
 				<a href="/" class="<?php if ($this->content->activeTab() == 'index') echo 'active '; ?>phpbb-tab">Main</a>
 				<h1>Welcome to Area51, home of phpBB development</h1>

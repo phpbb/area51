@@ -88,7 +88,7 @@ body {
 	font-size:80%;
 }
 
-#phpbb-sub-header div {
+#phpbb-sub-header div.fixed-width {
 	width:800px;
 }
 
