@@ -87,3 +87,26 @@ body {
 #phpbb-sub-header h1 a.ancestor {
 	font-size:80%;
 }
+
+#phpbb-sub-header div {
+	width:800px;
+}
+
+#phpbb-sub-header a.phpbb-tab, #phpbb-sub-header a:active.phpbb-tab, #phpbb-sub-header a:visited.phpbb-tab, #phpbb-sub-header a:hover.phpbb-tab {
+	font-family:Verdana,sans-serif;
+	display: block;
+	float: right;
+	color: #000000;
+	font-size: 12px;
+	background-color: #EEEEEE;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin: 0px;
+	margin-top:5px;
+}
+
+#phpbb-sub-header a:hover.phpbb-tab {
+	background-color: #FFFFFF;
+}

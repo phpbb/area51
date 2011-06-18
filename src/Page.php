@@ -19,8 +19,8 @@ class Page
 	<meta name="description" content="area51 @ phpBB - The development site of phpBB Group" />
 	<meta name="keywords" content="Forum software, discussion software, free, opensource, development" />
 	<title>Area51 @ phpBB.com</title>
-	<link href="area51.css" media="all" rel="stylesheet" type="text/css" />
-	<link href="header.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="/area51.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="/header.css" media="all" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<div id="wrapper">
@@ -40,7 +40,10 @@ class Page
 		</div>
 
 		<div id="phpbb-sub-header">
-			<h1>Welcome to Area51, home of phpBB development</h1>
+			<div>
+				<a href="/stats/" class="phpbb-tab">Statistics</a>
+				<h1>Welcome to Area51, home of phpBB development</h1>
+			</div>
 		</div>
 
 		<div id="main">

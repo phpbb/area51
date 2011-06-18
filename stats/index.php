@@ -1,6 +1,6 @@
 <?php
-require 'src/Page.php';
-require 'src/TrackerChart.php';
+require '../src/Page.php';
+require '../src/TrackerChart.php';
 
 class StatsPage
 {
@@ -15,7 +15,7 @@ class StatsPage
 					<li>
 						<b>Created vs. Resolved Tickets</b>
 						<?php
-							$chart = new TrackerChart;
+							$chart = new TrackerChart('../');
 							$chart->selectOlympus()
 								->createdVsResolved()
 								->daysSince($trackerStart)
@@ -28,7 +28,7 @@ class StatsPage
 					<li>
 						<b>Average Ticket Age</b>
 						<?php
-							$chart = new TrackerChart;
+							$chart = new TrackerChart('../');
 							$chart->selectOlympus()
 								->averageAge()
 								->daysSince($trackerStart)
@@ -43,7 +43,7 @@ class StatsPage
 					<li>
 						<b>Created vs. Resolved Tickets</b>
 						<?php
-							$chart = new TrackerChart;
+							$chart = new TrackerChart('../');
 							$chart->selectAscraeus()
 								->createdVsResolved()
 								->daysSince($trackerStart)
@@ -56,7 +56,7 @@ class StatsPage
 					<li>
 						<b>Assignees of resolved tickets</b>
 						<?php
-							$chart = new TrackerChart;
+							$chart = new TrackerChart('../');
 							$chart->selectAscraeusResolved()
 								->authorPieChart('assignees')
 								->daysSince($trackerStart)

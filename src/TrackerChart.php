@@ -2,13 +2,15 @@
 
 class TrackerChart
 {
+	protected $root_path;
 	protected $jira;
 	protected $cacheInterval = 3600;
 	protected $query;
 	protected $gadgetName;
 
-	public function __construct()
+	public function __construct($root_path)
 	{
+		$this->root_path = $root_path;
 		$this->jira = 'http://tracker.phpbb.com/';
 
 		$this->query['versionLabels'] = 'all';
@@ -61,8 +63,6 @@ class TrackerChart
 		$this->data['statType'] = $stat;
 		return $this;
 	}
-
-//http://tracker.phpbb.com/plugins/servlet/gadgets/ifr?container=atlassian&mid=2&country=UK&lang=en&view=default&view-params=%7B%22writable%22%3A%22true%22%7D&st=atlassian%3Aga1X%2BpGAnlmRE3JW7XaJ%2FNgg%2FmS1SGxloS6ZXu1ttsTtYRo8sxeO34%2B5IMoh5E1VW9%2BVi4jtSiEOzTSxwB6%2FJDbpOfDGHZ4jVaRb6L4vEV3Lt5YsKZ1Vb6REikyOVkG4ALANJiAo1rxYwnSObeGowYNPr6AEyyn0MazlSzoKNm9D%2BWmESlvYODv6EKV0TaiGDxwNK0qp0RiqnvE8MKMtDVU9MMOCX%2Bd8zmLFOdlaI3MRV0KpN2NV64sl67V5hX1hnLoFXfm9FvxBMpSjLKAetj1%2FkIMblq038SwO55AFnQMJ5KXrb41USZyq0rXmpgwanwCaxyu5E7jrrNKzGWf%2BzH1h9Xw%3D&up_isConfigured=true&up_isPopup=true&up_refresh=false&up_projectOrFilterId=jql-project+%3D+PHPBB3+AND+fixVersion+%3D+%223.0.9-RC2%22+ORDER+BY+status+DESC%2C+priority+DESC&up_daysprevious=30&up_periodName=daily&up_versionLabel=major&up_isCumulative=30&up_showUnresolvedTrend=false&url=http%3A%2F%2Ftracker.phpbb.com%2Frest%2Fgadgets%2F1.0%2Fg%2Fcom.atlassian.jira.gadgets%3Acreated-vs-resolved-issues-chart-gadget%2Fgadgets%2Fcreatedvsresolved-gadget.xml&libs=auth-refresh
 
 	public function selectOlympus()
 	{
@@ -143,7 +143,7 @@ class TrackerChart
 			$query .= urlencode($key) . '=' . urlencode($value) . '&';
 		}
 
-		$targetPath = 'writable/stats/' . md5($query) . '.png';
+		$targetPath = $this->root_path . 'writable/stats/' . md5($query) . '.png';
 
 
 		if (!file_exists($targetPath) || filemtime($targetPath) + $this->cacheInterval < time())
