@@ -3,6 +3,11 @@ require 'src/Page.php';
 
 class IndexPage
 {
+	public function activeTab()
+	{
+		return 'index';
+	}
+
 	public function render()
 	{
 ?>

@@ -105,8 +105,13 @@ body {
 	padding-bottom: 0px;
 	margin: 0px;
 	margin-top:5px;
+	margin-right:5px;
 }
 
 #phpbb-sub-header a:hover.phpbb-tab {
+	background-color: #FFFFFF;
+}
+
+#phpbb-sub-header a.active, #phpbb-sub-header a:active.active, #phpbb-sub-header a:visited.active, #phpbb-sub-header a:hover.active {
 	background-color: #FFFFFF;
 }

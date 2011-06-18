@@ -41,7 +41,8 @@ class Page
 
 		<div id="phpbb-sub-header">
 			<div>
-				<a href="/stats/" class="phpbb-tab">Statistics</a>
+				<a href="/stats/" class="<?php if ($this->content->activeTab() == 'stats') echo 'active '; ?>phpbb-tab">Statistics</a>
+				<a href="/" class="<?php if ($this->content->activeTab() == 'index') echo 'active '; ?>phpbb-tab">Main</a>
 				<h1>Welcome to Area51, home of phpBB development</h1>
 			</div>
 		</div>

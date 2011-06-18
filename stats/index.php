@@ -4,6 +4,11 @@ require '../src/TrackerChart.php';
 
 class StatsPage
 {
+	public function activeTab()
+	{
+		return 'stats';
+	}
+
 	public function render()
 	{
 		$trackerStart = new DateTime('2006-01-01T00:00:00+00:00');
