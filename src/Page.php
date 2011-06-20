@@ -21,19 +21,7 @@ class Page
 	<title>Area51 @ phpBB.com</title>
 	<link href="/area51.css" media="all" rel="stylesheet" type="text/css" />
 	<link href="/header.css" media="all" rel="stylesheet" type="text/css" />
-	<script type="text/javascript">
-
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-93879-3']);
-		_gaq.push(['_trackPageview']);
-
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-
-	</script>
+	<script type="text/javascript" src="/analytics.js"></script>
 </head>
 <body>
 	<div id="wrapper">
