@@ -1,6 +1,7 @@
 
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-93879-3']);
+_gaq.push(['_setDomainName', 'area51.phpbb.com']);
 _gaq.push(['_trackPageview']);
 
 (function() {
