@@ -11,8 +11,6 @@ class Page
 
 	function render()
 	{
-	// header pic alien from
-	// http://www.iconfinder.com/icondetails/15487/128/alien_smiley_icon
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
@@ -23,6 +21,19 @@ class Page
 	<title>Area51 @ phpBB.com</title>
 	<link href="/area51.css" media="all" rel="stylesheet" type="text/css" />
 	<link href="/header.css" media="all" rel="stylesheet" type="text/css" />
+	<script type="text/javascript">
+
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-93879-3']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+
+	</script>
 </head>
 <body>
 	<div id="wrapper">
