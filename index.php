@@ -1,5 +1,5 @@
 <?php
-require 'src/Page.php';
+require __DIR__ . '/src/Page.php';
 
 class IndexPage
 {
@@ -48,9 +48,9 @@ class IndexPage
 					<h2>Development Sites &amp; Tools</h2>
 					<ul class="section-list">
 						<li>
-							<a href="http://github.com/phpbb/" title="Github"><img src="images/github.png" title="Github" alt="Github" /></a>
-							<h2>Github</h2>
-							<p>phpBB's source code is hosted in <a href="http://git-scm.org/" title="Git">Git</a> repositories at Github. You can also find a number of other tools for phpBB or MOD development there.</p>
+							<a href="phpBB/" title="Development Discussion"><img src="images/development-discussion.png" title="Development Discussion" alt="Development Discussion" /></a>
+							<h2>Development Discussion</h2>
+							<p>All proposals for new features and code changes are discussed in this forum. It runs the latest unstable version of phpBB allowing you to test upcoming features.</p>
 						</li>
 						<li>
 							<a href="http://tracker.phpbb.com/" title="Tracker"><img src="images/tracker.png" title="Tracker" alt="Tracker" /></a>
@@ -58,9 +58,9 @@ class IndexPage
 							<p>If you found a bug in phpBB this is the place to report it. If you're not sure if the behaviour you found is really a bug try asking for help in the <a href="http://www.phpbb.com/community/viewforum.php?f=46" title="Support Forum">Support Forum</a> first.</p>
 						</li>
 						<li>
-							<a href="http://bamboo.phpbb.com/" title="Bamboo"><img src="images/bamboo.png" title="Bamboo" alt="Bamboo" /></a>
-							<h2>Continuous Integration</h2>
-							<p>phpBB is continuously tested against a large suite of automated tests to ensure we deliver a high quality product. Bamboo takes care of running the tests and providing us with useful statistics.</p>
+							<a href="http://github.com/phpbb/" title="Github"><img src="images/github.png" title="Github" alt="Github" /></a>
+							<h2>Github</h2>
+							<p>phpBB's source code is hosted in <a href="http://git-scm.org/" title="Git">Git</a> repositories at Github. You can also find a number of other tools for phpBB or MOD development there.</p>
 						</li>
 						<li>
 							<a href="http://wiki.phpbb.com/" title="Wiki"><img src="images/wiki.png" title="Wiki" alt="Wiki" /></a>
@@ -69,9 +69,9 @@ class IndexPage
 						</li>
 
 						<li class="line-break">
-							<a href="http://code.phpbb.com" title="Code Forge"><img src="images/code-forge.png" title="Code Forge" alt="Code Forge" /></a>
-							<h2>Code Forge</h2>
-							<p>The former home of phpBB source code still hosts a few utilities that haven't been moved over to git yet and subversion mirrors of our git repositories.</p>
+							<a href="http://bamboo.phpbb.com/" title="Bamboo"><img src="images/bamboo.png" title="Bamboo" alt="Bamboo" /></a>
+							<h2>Continuous Integration</h2>
+							<p>phpBB is continuously tested against a large suite of automated tests to ensure we deliver a high quality product. Bamboo takes care of running the tests and providing us with useful statistics.</p>
 						</li>
 						<li>
 							<img src="images/coding-style.png" title="Coding Guidelines" alt="Coding Guidelines" />
@@ -92,9 +92,9 @@ class IndexPage
 							</ul>
 						</li>
 						<li>
-							<a href="phpBB/" title="Development Discussion"><img src="images/development-discussion.png" title="Development Discussion" alt="Development Discussion" /></a>
-							<h2>Development Discussion</h2>
-							<p>All proposals for new features and code changes are discussed in this forum. It runs the latest unstable version of phpBB allowing you to test upcoming features.</p>
+							<a href="http://code.phpbb.com" title="Code Forge"><img src="images/code-forge.png" title="Code Forge" alt="Code Forge" /></a>
+							<h2>Code Forge</h2>
+							<p>The former home of phpBB source code still hosts a few utilities that haven't been moved over to git yet and subversion mirrors of our git repositories.</p>
 						</li>
 					</ul>
 				</div>
