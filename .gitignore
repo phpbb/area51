@@ -1,1 +1,4 @@
+app/cache
 writable/stats/*
+vendor
+*.cache
