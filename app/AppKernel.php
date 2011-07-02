@@ -17,6 +17,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
+            new Phpbb\Area51Bundle\PhpbbArea51Bundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

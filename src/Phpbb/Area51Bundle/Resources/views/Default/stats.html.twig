@@ -1,0 +1,29 @@
+{% extends "PhpbbArea51Bundle::layout.html.twig" %}
+
+{% block body %}
+<div>
+<h2>Ticket Tracker Statistics for phpBB &quot;3.0&quot; Olympus</h2>
+    <ul class="contribution-list">
+        <li>
+            <b>Created vs. Resolved Tickets</b>
+            <img src="{{ asset(olympus_created_vs_resolved) }}" />
+        </li>
+        <li>
+            <b>Average Ticket Age</b>
+            <img src="{{ asset(olympus_avg_age) }}" />
+        </li>
+    </ul>
+
+    <h2>Ascraeus (3.1) Ticket Tracker Statistics</h2>
+    <ul class="contribution-list">
+        <li>
+            <b>Created vs. Resolved Tickets</b>
+            <img src="{{ asset(ascraeus_created_vs_resolved) }}" />
+        </li>
+        <li>
+            <b>Assignees of resolved tickets</b>
+            <img src="{{ asset(ascraeus_avg_age) }}" />
+        </li>
+    </ul>
+</div>
+{% endblock %}

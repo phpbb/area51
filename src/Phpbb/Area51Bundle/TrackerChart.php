@@ -1,5 +1,7 @@
 <?php
 
+namespace Phpbb\Area51Bundle;
+
 class TrackerChart
 {
 	protected $root_path;
@@ -88,9 +90,9 @@ class TrackerChart
 		return $this;
 	}
 
-	public function daysSince(DateTime $date)
+	public function daysSince(\DateTime $date)
 	{
-		$this->query['daysprevious'] = $date->diff(new DateTime())->days;
+		$this->query['daysprevious'] = $date->diff(new \DateTime())->days;
 		return $this;
 	}
 
@@ -174,6 +176,6 @@ class TrackerChart
 
 	public function render()
 	{
-		echo '<img src="' . $this->get() . '" alt="" title=""/>';
+		return '<img src="' . $this->get() . '" alt="" title=""/>';
 	}
 }

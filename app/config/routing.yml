@@ -1,0 +1,5 @@
+PhpbbArea51Bundle:
+    resource: "@PhpbbArea51Bundle/Controller/"
+    type:     annotation
+    prefix:   /
+
