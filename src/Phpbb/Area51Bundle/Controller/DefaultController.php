@@ -72,6 +72,33 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/contributors", name="contributors")
+     * @Template()
+     */
+    public function contributorsAction()
+    {
+        $api_url = 'https://api.github.com/repos/phpbb/phpbb3/contributors';
+        $contributors = json_decode(file_get_contents($api_url), true);
+
+        foreach ($contributors as $i => $contributor)
+        {
+            $user_api_url = $contributor['url'];
+            $user = json_decode(file_get_contents($user_api_url), true);
+
+            $contributors[$i] = array_merge($contributor, array(
+                'name'          => isset($user['name']) ? $user['name'] : $contributor['login'],
+                'profile_url'   => 'https://github.com/'.$contributor['login'],
+                'commits_url'   => 'https://github.com/phpbb/phpbb3/commits?author='.$contributor['login'],
+            ));
+        }
+
+        return array(
+            'active_tab'    => 'contributors',
+            'contributors'  => $contributors,
+        );
+    }
+
+    /**
      * @Route("/docs{path}", requirements={"path"=".*"}, defaults={"path"=""})
      */
     public function docsRedirectAction($path)

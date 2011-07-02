@@ -1,0 +1,26 @@
+{% extends "PhpbbArea51Bundle::layout.html.twig" %}
+
+{% block body %}
+<div>
+    <h2>Contributors</h2>
+    <p>
+        {{ contributors|length }} developers have contributed to phpBB on GitHub.
+    </p>
+
+    <ul class="clearfix" style="margin-bottom: 20px; list-style: none;">
+    {% for contributor in contributors %}
+        <li style="float: left; width: 250px; margin-top: 25px;" class="clearfix">
+            <div style="float: left;">
+                <a href="{{ contributor.profile_url }}"><img src="{{ contributor.avatar_url }}" width="50" height="50" /></a>
+            </div>
+            <div style="float: left; margin-left: 10px; margin-top: 5px;">
+                <a href="{{ contributor.profile_url }}" style="font-size: 1.15em; text-decoration: none;">{{ contributor.name }}</a>
+                <br />
+                <a href="{{ contributor.commits_url }}" style="text-decoration: none;">{{ contributor.contributions }}</a>
+                contribution{{ contributor.contributions > 1 ? 's' : '' }}
+            </div>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock %}
