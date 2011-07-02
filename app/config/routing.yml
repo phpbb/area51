@@ -3,3 +3,6 @@ PhpbbArea51Bundle:
     type:     annotation
     prefix:   /
 
+_internal:
+    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
+    prefix:   /_internal

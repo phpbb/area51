@@ -13,6 +13,7 @@ framework:
     session:
         default_locale: %locale%
         auto_start:     true
+    esi: { enabled: true }
 
 # Twig Configuration
 twig:
@@ -54,3 +55,6 @@ swiftmailer:
 jms_security_extra:
     secure_controllers:  true
     secure_all_services: false
+
+sensio_framework_extra:
+    cache: { annotations: true }

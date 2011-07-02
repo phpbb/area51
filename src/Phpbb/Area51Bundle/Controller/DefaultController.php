@@ -3,6 +3,7 @@
 namespace Phpbb\Area51Bundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
@@ -77,6 +78,19 @@ class DefaultController extends Controller
      */
     public function contributorsAction()
     {
+        return array(
+            'active_tab'    => 'contributors',
+
+        );
+    }
+
+    /**
+     * @Cache(expires="tomorrow", public=true)
+     * @Route("/contributors/list", name="contributors_list")
+     * @Template()
+     */
+    public function contributorsListAction()
+    {
         $api_url = 'https://api.github.com/repos/phpbb/phpbb3/contributors';
         $contributors = json_decode(file_get_contents($api_url), true);
 
@@ -93,7 +107,6 @@ class DefaultController extends Controller
         }
 
         return array(
-            'active_tab'    => 'contributors',
             'contributors'  => $contributors,
         );
     }
