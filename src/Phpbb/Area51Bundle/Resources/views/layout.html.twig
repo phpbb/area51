@@ -5,8 +5,8 @@
     <meta name="description" content="area51 @ phpBB - The development site of phpBB Group" />
     <meta name="keywords" content="Forum software, discussion software, free, opensource, development" />
     <title>{% block title %}Area51 @ phpBB.com{% endblock %}</title>
-    <link href="{{ asset('css/area51.css') }}" media="all" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('css/header.css') }}" media="all" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('area51.css') }}" media="all" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('header.css') }}" media="all" rel="stylesheet" type="text/css" />
     {% block stylesheets %}{% endblock %}
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
 </head>
@@ -45,7 +45,7 @@
 
     </div>
 
-<script type="text/javascript" src="{{ asset('js/analytics.js') }}"></script>
+<script type="text/javascript" src="{{ asset('analytics.js') }}"></script>
 {% block javascripts %}{% endblock %}
 
 </body>
