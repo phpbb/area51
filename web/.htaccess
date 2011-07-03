@@ -4,5 +4,6 @@
     RewriteRule "^(.*/)?\.git/" - [F,L]
 
     RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)$ app.php [QSA,L]
 </IfModule>
