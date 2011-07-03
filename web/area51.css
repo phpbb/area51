@@ -151,6 +151,16 @@ li.full-line {
 	background-color:#ccc;
 }
 
+.powered-symfony {
+	text-align: center;
+	margin-top: 30px;
+}
+
+.powered-symfony a {
+	display: block;
+	margin-top: 5px;
+}
+
 /* clearfix */
 .clearfix:after {
 	content: ".";
