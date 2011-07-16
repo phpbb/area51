@@ -21,7 +21,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/stats", name="stats")
+     * @Route("/stats/", name="stats")
      * @Template()
      */
     public function statsAction()
@@ -73,7 +73,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/contributors", name="contributors")
+     * @Route("/contributors/", name="contributors")
      * @Template()
      */
     public function contributorsAction()
@@ -86,7 +86,7 @@ class DefaultController extends Controller
 
     /**
      * @Cache(expires="tomorrow", public=true)
-     * @Route("/contributors/list", name="contributors_list")
+     * @Route("/contributors/list/", name="contributors_list")
      * @Template()
      */
     public function contributorsListAction()
