@@ -20,6 +20,7 @@ class TrackerChart
 
 		$this->query['width'] = '380';
 		$this->query['height'] = '300';
+		$this->query['timestamp-cache-expire'] = date('Y-z');
 	}
 
 	public function width($width)
