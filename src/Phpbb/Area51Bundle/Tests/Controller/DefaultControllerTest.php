@@ -9,9 +9,27 @@ class DefaultControllerTest extends WebTestCase
     public function testIndex()
     {
         $client = $this->createClient();
+        $crawler = $client->request('GET', '/');
 
-        $crawler = $client->request('GET', '/hello/Fabien');
+        $this->assertContains('Get Involved', $crawler->filter('#content h2')->text());
+    }
 
-        $this->assertTrue($crawler->filter('html:contains("Hello Fabien")')->count() > 0);
+    /**
+     * @dataProvider explosionProvider
+     */
+    public function testExplosions($path)
+    {
+        $client = $this->createClient();
+        $crawler = $client->request('GET', $path);
+    }
+
+    public function explosionProvider()
+    {
+        return array(
+            array('/'),
+            array('/stats/'),
+            // this one is veeeery slow
+            // array('/contributors/'),
+        );
     }
 }
