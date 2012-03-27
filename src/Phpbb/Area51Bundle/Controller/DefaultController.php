@@ -83,6 +83,18 @@ class DefaultController extends Controller
 
         );
     }
+    /**
+     * @Route("/projects/", name="projects")
+     * @Template()
+     */
+    public function projectsAction()
+    {
+        return array(
+            'active_tab'    => 'projects',
+            'listinfo'      => 'http://code.phpbb.com/mailman/listinfo',
+
+        );
+    }
 
     /**
      * @Cache(expires="tomorrow", public=true)
