@@ -91,7 +91,6 @@ class DefaultController extends Controller
     {
         return array(
             'active_tab'    => 'projects',
-            'listinfo'      => 'http://code.phpbb.com/mailman/listinfo',
 
         );
     }
