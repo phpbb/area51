@@ -15,11 +15,11 @@
         <div id="phpbb-header-bar">
         <ul class="phpbb-menu">
             <li class="phpbb-logo"><a href="http://area51.phpbb.com/"><img src="/images/area51.png" alt="area51 @ phpBB" title="area51.phpbb.com" /></a></li>
-            <li class="active"><a href="http://area51.phpbb.com">Home</a></li>
+            <li class="{{ active_tab != 'projects' ? 'active' : '' }}"><a href="http://area51.phpbb.com">Home</a></li>
             <li><a href="http://tracker.phpbb.com/">Tracker</a></li>
             <li><a href="http://wiki.phpbb.com/">Wiki</a></li>
             <li><a href="http://bamboo.phpbb.com/">Builds</a></li>
-            <li><a href="http://area51.phpbb.com/projects/">Projects</a></li>
+            <li class="{{ active_tab == 'projects' ? 'active' : '' }}"><a href="http://area51.phpbb.com/projects/">Projects</a></li>
             <li><a href="http://area51.phpbb.com/phpBB/">Discussion</a></li>
         </ul>
         <div id="exit-phpbb">
@@ -30,7 +30,6 @@
         <div id="phpbb-sub-header">
             <div class="fixed-width">
                 {# <a href="/feed/" class="{{ active_tab == 'feed' ? 'active' : '' }} phpbb-tab">Feed</a> #}
-                <a href="{{ path('projects') }}" class="{{ active_tab == 'projects' ? 'active' : '' }} phpbb-tab">Projects</a>
                 <a href="{{ path('contributors') }}" class="{{ active_tab == 'contributors' ? 'active' : '' }} phpbb-tab">Contributors</a>
                 <a href="{{ path('stats') }}" class="{{ active_tab == 'stats' ? 'active' : '' }} phpbb-tab">Statistics</a>
                 <a href="{{ path('index') }}" class="{{ active_tab == 'index' ? 'active' : '' }} phpbb-tab">Main</a>
