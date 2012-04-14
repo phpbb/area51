@@ -1,15 +1,16 @@
 <?php
 if($argc != 6)
 {
-	die('Usage: ' . $argv[0] . ' <output dir> <from version> <to version> <side-by-side | inline> <git diff --name-status results file>');
+	die('Usage: ' . $argv[0] . ' <output dir> <data dir> <from version> <to version> <side-by-side | inline> <git diff --name-status results file>');
 }
 
 $base_dir = dirname(__FILE__);
-$out_dir = $argv[1];		//'../../web/code-changes/'
-$from_version = $argv[2];	//'3.0.0';
-$to_version = $argv[3];		//'3.0.10';
-$diff_mode = $argv[4];		//'side-by-side';
-$file = $argv[5];			//'file.txt'
+$out_dir = $argv[1];		//'/path/to/web/code-changes/'
+$data_dir = $argv[2];		//'/path/to/data/code-changes/'
+$from_version = $argv[3];	//'3.0.0';
+$to_version = $argv[4];		//'3.0.10';
+$diff_mode = $argv[5];		//'side-by-side';
+$file = $argv[6];			//'file.txt'
 
 define('IN_PHPBB', true);
 include($base_dir . '/includes/diff.php');
@@ -38,20 +39,20 @@ $user = new user();
 */
 function generate_diff_file($path)
 {
-	global $base_dir, $out_dir, $diff_mode, $from_version, $to_version, $user;
+	global $data_dir, $out_dir, $diff_mode, $from_version, $to_version, $user;
 
-	if(file_exists($base_dir . '/versions/' . $from_version . '/' . $path))
+	if(file_exists($data_dir . '/versions/' . $from_version . '/' . $path))
 	{
-		$file1 = file_get_contents($base_dir . '/versions/' . $from_version . '/' . $path);
+		$file1 = file_get_contents($data_dir . '/versions/' . $from_version . '/' . $path);
 	}
 	else
 	{
 		$file1 = '';
 	}
 	
-	if(file_exists($base_dir . '/versions/' . $to_version . '/' . $path))
+	if(file_exists($data_dir . '/versions/' . $to_version . '/' . $path))
 	{
-		$file2 = file_get_contents($base_dir . '/versions/' . $to_version . '/' . $path);
+		$file2 = file_get_contents($data_dir . '/versions/' . $to_version . '/' . $path);
 	}
 	else
 	{
@@ -71,8 +72,8 @@ function generate_diff_file($path)
 
 	$output = $renderer->get_diff_content($diff);
 	
-	$header = file_get_contents($base_dir . '/template/overall_header.html');
-	$footer = file_get_contents($base_dir . '/template/overall_footer.html');
+	$header = file_get_contents($data_dir . '/template/overall_header.html');
+	$footer = file_get_contents($data_dir . '/template/overall_footer.html');
 	
 	//Set the active version in the navigation
 	$header = str_replace('<li><a href="/code-changes/' . $from_version . '/">', '<li id="activemenu"><a href="/code-changes/' . $from_version . '/">', $header);
@@ -296,10 +297,10 @@ foreach($file as $line)
 sort_array($changes);
 print_structure($changes, '', $output);
 
-$header = file_get_contents($base_dir . '/template/overall_header.html');
+$header = file_get_contents($data_dir . '/template/overall_header.html');
 
 $footer = '</ul>';
-$footer .= file_get_contents($base_dir . '/template/overall_footer.html');
+$footer .= file_get_contents($data_dir . '/template/overall_footer.html');
 
 //Set the active version in the navigation
 $header = str_replace('<li><a href="/code-changes/' . $from_version . '/">', '<li id="activemenu"><a href="/code-changes/' . $from_version . '/">', $header);
