@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 mode="side-by-side"
-basedir=`pwd`
-outdir="../../web/code-changes/"
-outdir_abs=`cd $outdir; pwd`
+basedir=`cd $(dirname "$BASH_SOURCE"); pwd`
+outdir=`cd "$basedir"; cd ../../web/code-changes/; pwd`
 latest="3.0.10"
 releases="3.0.0 3.0.1 3.0.2 3.0.3 3.0.4 3.0.5 3.0.6 3.0.7 3.0.7-PL1 3.0.8 3.0.9"
 
@@ -18,6 +17,8 @@ fi
 
 # Update the repository
 cd "$basedir"/repo
+rm -f log.txt		# Clean up interrupted runs
+
 git fetch --quiet
 git reset --quiet --hard HEAD
 
@@ -45,16 +46,18 @@ done
 # Generate the code changes
 for tag in $releases
 do
+	echo "Building code changes for $tag-$latest"
 	if [ ! -d "$basedir/$tag/$mode/$latest" ];
 	then
-		echo "Building code changes for $tag-$latest"
-		mkdir -p "$outdir_abs"/$tag/$mode/$latest
-		git diff --name-status release-$tag release-$latest > log.txt
-		cd ..
-		php "$basedir"/create_diffs.php "$outdir" $tag $latest side-by-side "$basedir"/repo/log.txt
-		cd "$basedir"/repo
-		rm log.txt
+		mkdir -p "$outdir"/$tag/$mode/$latest
 	fi
+
+	git diff --name-status release-$tag release-$latest > log.txt
+	cd ..
+	php "$basedir"/create_diffs.php "$outdir" $tag $latest side-by-side "$basedir"/repo/log.txt
+	cd "$basedir"/repo
+	rm log.txt
+
 done
 
 echo "Done"
