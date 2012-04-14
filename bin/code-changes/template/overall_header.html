@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<title>Code Changes</title>
+
+<link href="/code-changes/css/admin.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/code-changes/css/code_changes.css" rel="stylesheet" type="text/css"/>
+<link href="http://area51.phpbb.com/header.css" media="all" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="http://www.phpbb.com/js/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="http://www.phpbb.com/js/jquery.treeview.min.js"></script>
+<script type="text/javascript" src="/code-changes/css/code_changes.js"></script>
+
+<script type="text/javascript">
+// <![CDATA[
+var menu_state = 'shown';
+
+/**
+* Hiding/Showing the side menu
+*/
+function switch_menu()
+{
+	var menu = document.getElementById('menu');
+	var main = document.getElementById('main');
+	var toggle = document.getElementById('toggle');
+	var handle = document.getElementById('toggle-handle');
+
+	switch (menu_state)
+	{
+		// hide
+		case 'shown':
+			main.style.width = '98%';
+			menu_state = 'hidden';
+			menu.style.display = 'none';
+			toggle.style.width = '20px';
+			handle.style.backgroundRepeat = 'no-repeat';
+				handle.style.backgroundPosition = '100% 50%';
+				toggle.style.left = '0';
+		break;
+
+		// show
+		case 'hidden':
+			main.style.width = '76%';
+			menu_state = 'shown';
+			menu.style.display = 'block';
+			toggle.style.width = '5%';
+			handle.style.backgroundRepeat = 'no-repeat';
+				handle.style.backgroundPosition = '0% 50%';
+				toggle.style.left = '15%';
+		break;
+	}
+}
+
+function resize_panel()
+{
+	var block = document.getElementById('codepanel');
+	var height;
+
+	if (window.innerHeight)
+	{
+		height = window.innerHeight - 150;
+		block.style.height = height + 'px';
+	}
+	else
+	{
+		//whatever IE needs to do this
+	}
+}
+
+window.onresize = resize_panel;
+
+// ]]>
+</script>
+</head>
+
+<body>
+
+<div id="phpbb-header-bar">
+	<ul class="phpbb-menu">
+		<li class="phpbb-logo"><a href="http://area51.phpbb.com/"><img src="http://area51.phpbb.com/images/area51.png" alt="area51 @ phpBB" title="area51.phpbb.com" /></a></li>
+		<li class="active"><a href="http://area51.phpbb.com">Home</a></li>
+		<li><a href="http://tracker.phpbb.com/secure/Dashboard.jspa">Tracker</a></li>
+		<li><a href="http://wiki.phpbb.com/">Wiki</a></li>
+		<li><a href="http://bamboo.phpbb.com/">Builds</a></li>
+		<li><a href="/projects/">Projects</a></li>
+		<li><a href="http://area51.phpbb.com/phpBB/">Discussion</a></li>
+	</ul>
+	<div id="exit-phpbb">
+		<a href="http://www.phpbb.com/"><img src="http://area51.phpbb.com/images/back_phpbb.png" alt="phpBB" title="www.phpbb.com" /></a>
+	</div>
+</div>
+
+<div id="phpbb-sub-header">
+	<h1>Code Changes</h1>
+</div>
+
+<div id="wrap">
+	<div id="page-body">
+		<div id="tabs">
+			<div id="menuSpacer">&nbsp;</div>
+			<ul>
+				<li id="activetab"><a><span>3.0.x</span></a></li>
+			</ul>
+			{CURRENT_FILE}
+		</div>
+		<div id="acp">
+		<div class="panel">
+			<span class="corners-top"><span></span></span>
+				<div id="diff_content">
+					<div id="toggle"><a id="toggle-handle" accesskey="m" title="Hide or display the side menu" onclick="switch_menu(); return false;" href="#"></a></div>
+					<div id="menu">
+						<ul>
+							<li class="header">Previous Versions</li>
+							<li><a href="/code-changes/3.0.9/"><span>3.0.9 to 3.0.10</span></a></li>
+							<li><a href="/code-changes/3.0.8/"><span>3.0.8 to 3.0.10</span></a></li>
+							<li><a href="/code-changes/3.0.7-PL1/"><span>3.0.7-PL1 to 3.0.10</span></a></li>
+							<li><a href="/code-changes/3.0.7/"><span>3.0.7 to 3.0.10</span></a></li>
+							<li><a href="/code-changes/3.0.6/"><span>3.0.6 to 3.0.10</span></a></li>
+							<li><a href="/code-changes/3.0.5/"><span>3.0.5 to 3.0.10</span></a></li>
+							<li><a href="/code-changes/3.0.4/"><span>3.0.4 to 3.0.10</span></a></li>
+							<li><a href="/code-changes/3.0.3/"><span>3.0.3 to 3.0.10</span></a></li>
+							<li><a href="/code-changes/3.0.2/"><span>3.0.2 to 3.0.10</span></a></li>
+							<li><a href="/code-changes/3.0.1/"><span>3.0.1 to 3.0.10</span></a></li>
+							<li><a href="/code-changes/3.0.0/"><span>3.0.0 to 3.0.10</span></a></li>
+						</ul>
+					</div>
+					<div id="main">

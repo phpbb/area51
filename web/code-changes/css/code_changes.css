@@ -1,0 +1,197 @@
+#main {
+	font-size: 1em;
+	line-height: 0.7em;
+	margin: 0 1% 0 1%;
+	padding: 0;
+	width: 76%;
+}
+
+#wrap {
+	padding: 0 0 15px 0;
+	min-width: 900px;
+	margin-top:0px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 15px;
+}
+
+#diff_content {
+	padding: 30px 10px 10px;
+	position: relative;
+}
+
+#menuSpacer {
+	float: left;
+	width: 20%;
+	display:block;
+}
+
+#tabs {
+	padding-top: 15px;
+}
+
+/**
+* Column Diff
+*/
+table.hrdiff {
+	margin: 0 0 8px 5px;
+	width: 100%;
+	overflow: hidden;
+	border-bottom: 1px solid #999;
+	table-layout: fixed;
+	background: transparent;
+}
+
+table.hrdiff th {
+	text-align: left;
+	width: 50%;
+	color: #333;
+	font-family: Verdana,Helvetica,sans-serif;
+	font-size: 11px;
+	border-bottom: 1px solid #999;
+	border-right: 1px solid #999;
+	background: #D9D9D9;
+}
+
+table.hrdiff thead th {
+	font-weight: bold;
+	font-size: 110%;
+	padding: 2px;
+}
+
+table.hrdiff tr:first-child th {
+	border-top: none;
+}
+
+table.hrdiff tbody th {
+	/*padding: 2em 1px 1px 1px;*/
+	font-size: 80%;
+	border-top: 1px solid #999;
+}
+
+table.hrdiff tbody td {
+	border-right: 1px solid #999;
+}
+
+table.hrdiff td pre {
+	font-family: "Consolas", monospace;
+	font-size: 1.1em;
+	white-space: pre-wrap; /* css-3 */
+	white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+	white-space: -pre-wrap; /* Opera 4-6 */
+	white-space: -o-pre-wrap; /* Opera 7 */
+	word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+table.hrdiff .unmodified {
+	background: transparent;
+}
+
+table.hrdiff .added {
+	background: #9f9;
+}
+
+table.hrdiff .added_empty {
+	background: #cfc;
+}
+
+table.hrdiff .modified {
+	background: #fd9;
+}
+
+table.hrdiff .removed {
+	background: #f99;
+}
+
+table.hrdiff .removed_empty {
+	background: #fcc;
+}
+
+table.hrdiff caption {
+	caption-side: top;
+	text-align: left;
+	margin: 0 0 8px 5px;
+	font-size: 90%;
+	font-weight: bold;
+	padding: 5px;
+}
+
+table.hrdiff caption span {
+	height: 10px;
+	width: 10px;
+	line-height: 10px;
+	letter-spacing: 10px;
+	border: 1px solid #000;
+	margin-left: 0.5em;
+	vertical-align: baseline;
+}
+
+#main .treeview ul {
+	margin-left:0em;
+}
+
+#main .treeview a {
+	text-decoration: none;
+}
+
+.treeview, .treeview ul { 
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.treeview .hitarea {
+	background: url(images/treeview-default.gif) -64px -25px no-repeat;
+	height: 16px;
+	width: 16px;
+	margin-left: -16px;
+	float: left;
+	cursor: pointer;
+}
+/* fix for IE6 */
+* html .hitarea {
+	display: inline;
+	float:none;
+}
+
+.treeview li { 
+	margin: 0;
+	padding: 3px 0pt 3px 16px;
+	line-height: normal;
+}
+
+.treeview a.selected {
+	background-color: #eee;
+}
+
+#treecontrol { margin: 1em 0; display: none; }
+
+.treeview .hover { color: red; cursor: pointer; }
+
+.treeview li { background: url(images/treeview-default-line.gif) 0 0 no-repeat; }
+.treeview li.collapsable, .treeview li.expandable { background-position: 0 -176px; }
+
+.treeview .expandable-hitarea { background-position: -80px -3px; }
+
+.treeview li.last { background-position: 0 -1766px }
+.treeview li.lastCollapsable, .treeview li.lastExpandable { background-image: url(images/treeview-default.gif); }  
+.treeview li.lastCollapsable { background-position: 0 -111px }
+.treeview li.lastExpandable { background-position: -32px -67px }
+
+.treeview div.lastCollapsable-hitarea, .treeview div.lastExpandable-hitarea { background-position: 0; }
+
+.filetree li { padding: 3px 0 2px 16px; }
+.filetree span.folder, .filetree span.file { padding: 1px 0 1px 18px; display: block; }
+.filetree span.folder { background: url(images/folder.png) 0 0 no-repeat; }
+.filetree span.folder.A { background: url(images/folder-A.png) 0 0 no-repeat; }
+.filetree span.folder.M { background: url(images/folder-M.png) 0 0 no-repeat; }
+.filetree span.folder.D { background: url(images/folder-D.png) 0 0 no-repeat; }
+
+.filetree li.expandable span.folder { background: url(images/folder-closed.png) 0 0 no-repeat; }
+.filetree li.expandable span.folder.A { background: url(images/folder-closed-A.png) 0 0 no-repeat; }
+.filetree li.expandable span.folder.M { background: url(images/folder-closed-M.png) 0 0 no-repeat; }
+.filetree li.expandable span.folder.D { background: url(images/folder-closed-D.png) 0 0 no-repeat; }
+
+.filetree span.file.A { background: url(images/file-A.png) 0 0 no-repeat; }
+.filetree span.file.M { background: url(images/file-M.png) 0 0 no-repeat; }
+.filetree span.file.D { background: url(images/file-D.png) 0 0 no-repeat; }
