@@ -66,7 +66,7 @@ do
 	fi
 
 	git diff --name-status release-$tag release-$latest > "$datadir"/log.txt
-	php "$basedir"/src/code-changes/create_diffs.php "$outdir" $tag $latest side-by-side "$datadir"/log.txt
+	php "$basedir"/src/code-changes/create_diffs.php "$outdir" "$datadir" $tag $latest side-by-side "$datadir"/log.txt
 	rm -f "$datadir"/log.txt
 done
 

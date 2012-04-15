@@ -1,5 +1,5 @@
 <?php
-if($argc != 6)
+if($argc != 7)
 {
 	die('Usage: ' . $argv[0] . ' <output dir> <data dir> <from version> <to version> <side-by-side | inline> <git diff --name-status results file>');
 }
