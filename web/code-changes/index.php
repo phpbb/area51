@@ -1,2 +1,2 @@
 <?php
-include('3.0.9/index.html');
+header('Location: /code-changes/3.0.9/');
