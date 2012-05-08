@@ -26,7 +26,8 @@
             <a href="http://www.phpbb.com/"><img src="{{ asset('images/back_phpbb.png') }}" alt="phpBB" title="www.phpbb.com" /></a>
         </div>
         </div>
-
+        
+        {% block sub_menu %}
         <div id="phpbb-sub-header">
             <div class="fixed-width">
                 {# <a href="/feed/" class="{{ active_tab == 'feed' ? 'active' : '' }} phpbb-tab">Feed</a> #}
@@ -36,6 +37,7 @@
                 <h1>Home of phpBB Development</h1>
             </div>
         </div>
+        {% endblock %}
 
         <div id="main">
             <div id="content">
