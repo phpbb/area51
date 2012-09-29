@@ -5,3 +5,4 @@ web/writable/stats/*
 vendor
 *.cache
 *.log
+bin/doctrine*
