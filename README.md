@@ -11,7 +11,7 @@ based on Symfony2.
 
 First of all, install the dependencies.
 
-    $ bin/vendors install
+    $ composer.phar install
 
 Then adjust the configuration in `app/config/parameters.ini`.
 
