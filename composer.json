@@ -1,19 +1,11 @@
 {
+    "name": "phpbb/area51",
+    "description": "phpBB's Area51 site",
     "autoload": {
         "psr-0":         {
             "": "src/"
         }
     },
-    "config": {
-        "bin-dir": "bin"
-    },
-    "description": "The \"Symfony Standard Edition\" distribution",
-    "extra": {
-        "symfony-app-dir": "app",
-        "symfony-web-dir": "web"
-    },
-    "minimum-stability": "beta",
-    "name": "symfony/framework-standard-edition",
     "require": {
         "doctrine/common": "2.3.*",
         "doctrine/dbal": "2.3.*",
@@ -35,16 +27,24 @@
     },
     "scripts": {
         "post-install-cmd": [
-"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
-    ],
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+        ],
         "post-update-cmd": [
-"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
-    ]
-    }
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+        ]
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-web-dir": "web"
+    },
+    "minimum-stability": "beta"
 }
