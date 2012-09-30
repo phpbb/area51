@@ -6,3 +6,4 @@ vendor
 *.cache
 *.log
 bin/doctrine*
+app/config/parameters.yml
