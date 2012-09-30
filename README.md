@@ -13,7 +13,7 @@ First of all, install the dependencies.
 
     $ composer.phar install
 
-Then adjust the configuration in `app/config/parameters.ini`.
+Then adjust the configuration in `app/config/parameters.yml`.
 
 Point your webroot to `/web`.
 
