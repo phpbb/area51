@@ -1,5 +1,5 @@
 {
-    "hash": "268eafc40255f737f1ab5ff272ed2db5",
+    "hash": "87a6d6d51b383fd9e7f426a2063209e3",
     "packages": [
         {
             "name": "doctrine/common",
@@ -18,7 +18,7 @@
             "require": {
                 "php": ">=5.3.2"
             },
-            "time": "2012-09-20 05:55:18",
+            "time": "1348120518",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -131,6 +131,74 @@
                 "persistence",
                 "dbal",
                 "queryobject"
+            ]
+        },
+        {
+            "name": "doctrine/doctrine-bundle",
+            "version": "v1.0.0",
+            "target-dir": "Doctrine/Bundle/DoctrineBundle",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/doctrine/DoctrineBundle.git",
+                "reference": "v1.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/doctrine/DoctrineBundle/zipball/v1.0.0",
+                "reference": "v1.0.0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": "2.1.*",
+                "symfony/doctrine-bridge": "2.1.*",
+                "doctrine/dbal": ">=2.2,<2.4-dev"
+            },
+            "require-dev": {
+                "doctrine/orm": ">=2.2,<2.4-dev",
+                "symfony/yaml": "2.1.*",
+                "symfony/validator": "2.1.*"
+            },
+            "suggest": {
+                "doctrine/orm": "The Doctrine ORM integration is optional in the bundle."
+            },
+            "time": "2012-09-07 21:18:21",
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\Bundle\\DoctrineBundle": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                }
+            ],
+            "description": "Symfony DoctrineBundle",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "database",
+                "orm",
+                "persistence",
+                "dbal"
             ]
         },
         {
@@ -323,7 +391,7 @@
                 "doctrine/doctrine-bundle": "*",
                 "doctrine/orm": "*"
             },
-            "time": "2012-09-21 08:56:32",
+            "time": "1348217792",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -429,7 +497,7 @@
                 "symfony/form": "*",
                 "symfony/validator": "*"
             },
-            "time": "2012-09-06 16:12:23",
+            "time": "1346947943",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -490,7 +558,7 @@
                 "ptachoire/cssembed": "Assetic provides the integration with phpcssembed to embed data uris",
                 "leafo/scssphp-compass": "Assetic provides the integration with the SCSS compass plugin"
             },
-            "time": "2012-09-30 11:32:39",
+            "time": "1349004759",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -737,7 +805,7 @@
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "2012-09-27 12:11:48",
+            "time": "1348747908",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1051,7 +1119,7 @@
             "require": {
                 "twig/twig": "1.*"
             },
-            "time": "2012-09-04 14:51:18",
+            "time": "1346770278",
             "type": "library",
             "extra": {
                 "branch-alias": {

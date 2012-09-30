@@ -10,6 +10,7 @@
         "doctrine/common": "2.3.*",
         "doctrine/dbal": "2.3.*",
         "doctrine/orm": "2.3.*",
+        "doctrine/doctrine-bundle": "1.0.*",
         "jms/di-extra-bundle": "1.1.*",
         "jms/security-extra-bundle": "1.2.*",
         "kriswallsmith/assetic": "1.1.*@dev",
