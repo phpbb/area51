@@ -2,6 +2,6 @@
 
 {% block body %}
 <div>
-    {% render 'PhpbbArea51Bundle:Default:contributorsList' with {}, {'standalone': true} %}
+    {{ render(controller('PhpbbArea51Bundle:Default:contributorsList', {}), { 'strategy': 'esi'}) }}
 </div>
 {% endblock %}

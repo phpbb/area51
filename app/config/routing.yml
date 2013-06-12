@@ -2,7 +2,3 @@ PhpbbArea51Bundle:
     resource: "@PhpbbArea51Bundle/Controller/"
     type:     annotation
     prefix:   /
-
-_internal:
-    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
-    prefix:   /_internal
