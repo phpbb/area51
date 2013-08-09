@@ -73,17 +73,6 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/contributors/", name="contributors")
-     * @Template()
-     */
-    public function contributorsAction()
-    {
-        return array(
-            'active_tab'    => 'contributors',
-
-        );
-    }
-    /**
      * @Route("/projects/", name="projects")
      * @Template()
      */

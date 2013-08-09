@@ -26,12 +26,12 @@
             <a href="//www.phpbb.com/"><img src="{{ asset('images/back_phpbb.png') }}" alt="phpBB" title="www.phpbb.com" /></a>
         </div>
         </div>
-        
+
         {% block sub_menu %}
         <div id="phpbb-sub-header">
             <div class="fixed-width">
                 {# <a href="/feed/" class="{{ active_tab == 'feed' ? 'active' : '' }} phpbb-tab">Feed</a> #}
-                <a href="{{ path('contributors') }}" class="{{ active_tab == 'contributors' ? 'active' : '' }} phpbb-tab">Contributors</a>
+                {# <a href="{{ path('contributors') }}" class="{{ active_tab == 'contributors' ? 'active' : '' }} phpbb-tab">Contributors</a> #}
                 <a href="{{ path('stats') }}" class="{{ active_tab == 'stats' ? 'active' : '' }} phpbb-tab">Statistics</a>
                 <a href="{{ path('index') }}" class="{{ active_tab == 'index' ? 'active' : '' }} phpbb-tab">Main</a>
                 <h1>Home of phpBB Development</h1>
