@@ -257,7 +257,7 @@ function sort_array(&$array)
 }
 
 $ignore_folders = array('develop', 'docs', 'install');
-$ignore_files = array('config.php');
+$ignore_files = array('config.php', 'composer.json', 'composer.lock');
 
 $changes = array();
 $status_info = array();
