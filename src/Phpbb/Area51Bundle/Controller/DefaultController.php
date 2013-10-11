@@ -80,7 +80,6 @@ class DefaultController extends Controller
     {
         return array(
             'active_tab'    => 'projects',
-
         );
     }
 
@@ -120,5 +119,31 @@ class DefaultController extends Controller
             return $this->redirect('http://area51.phpbb.com/docs/30x'.$path, 301);
         }
         return $this->redirect($this->generateUrl('index'), 301);
+    }
+
+    /**
+     * @Route("/downloads/", name="downloads")
+     * @Template()
+     */
+    public function downloadsAction()
+    {
+        // Make this false when the most recent release is not an RC/Alpha/Beta
+        $latestDevelopment = false;
+        $previousVersion = '3.0.12';
+        $currentVersion = '3.1.0-a1';
+        $currentBranch = '3.1';
+        $currentVersionFiles =  'https://download.phpbb.com/pub/release/' . $currentBranch
+            . '/' . $currentVersion . '/';
+        $currentUpgradeFiles =  'https://download.phpbb.com/pub/release/' . $currentBranch
+            . '/update/to_' . $currentVersion . '/';
+
+        return array(
+            'active_tab'    => 'downloads',
+            'latestDevelopment' => $latestDevelopment,
+            'previousVersion'  => $previousVersion,
+            'currentVersion' => $currentVersion,
+            'currentVersionFiles'   => $currentVersionFiles,
+            'currentUpgradeFiles'   => $currentUpgradeFiles,
+        );
     }
 }

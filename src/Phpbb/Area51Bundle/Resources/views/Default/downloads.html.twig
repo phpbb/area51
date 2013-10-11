@@ -1,0 +1,47 @@
+{% extends "PhpbbArea51Bundle::layout.html.twig" %}
+
+{% block stylesheets %}
+<style type="text/css">
+li p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="clearfix">
+    <h2>Downloads</h2>
+    <p>This page hosts the latest unstable development version. All releases on this page are unsupported. Please visit <a href="https://www.phpbb.com/downloads/">the main downloads page</a> for the latest stable release.</p>
+    {% if latestDevelopment %}
+    <h1>Latest Development Release: {{ currentVersion }} </h1>
+    <p>You can view the full set of files <a href="{{ currentVersionFiles }}">here</a></p>
+    <ul>
+        <li>
+            <p>Full Package - <a href="{{ currentVersionFiles }}phpBB-{{ currentVersion }}.zip">zip</a> | <a href="{{ currentVersionFiles }}phpBB-{{ currentVersion }}.tar.bz2">bz2</a></p>
+        </li>
+        <li>
+            <p>Patch Files from {{ previousVersion }} - <a href="{{ currentVersionFiles }}phpBB-{{ currentVersion }}-patch.zip">zip</a> | <a href="{{ currentVersionFiles }}phpBB-{{ currentVersion }}-patch.tar.bz2">bz2</a></p>
+        </li>
+        <li>
+            <p>Changed Files from {{ previousVersion }} - <a href="{{ currentVersionFiles }}phpBB-{{ currentVersion }}-files.zip">zip</a> | <a href="{{ currentVersionFiles }}phpBB-{{ currentVersion }}-files.tar.bz2">bz2</a></p>
+        </li>
+        <li>
+            <p>Automatic Update Package from {{ previousVersion }} - <a href="{{ currentUpgradeFiles }}phpBB-{{ previousVersion }}_to_{{ currentVersion }}.zip">zip</a> | <a href="{{ currentUpgradeFiles }}phpBB-{{ previousVersion }}_to_{{ currentVersion }}.tar.bz2">bz2</a></p>
+        </li>
+        <li>
+            <p>Language and Style Code Changes from {{ previousVersion }} - <a href="{{ currentUpgradeFiles }}phpBB-{{ previousVersion }}_to_{{ currentVersion }}-codechanges.zip">zip</a> | <a href="{{ currentUpgradeFiles }}phpBB-{{ previousVersion }}_to_{{ currentVersion }}-codechanges.tar.bz2">bz2</a></p>
+        </li>
+    </ul>
+    {% endif %}
+    <h1>Latest repository builds</h1>
+    <ul>
+        <li>
+            <p><a href="https://bamboo.phpbb.com/browse/PHPBB3-DEVELOP/latestSuccessful/artifact/JOBPACKAGE/Release-Files">Develop</a></p>
+        </li>
+        <li>
+            <p><a href="https://bamboo.phpbb.com/browse/PHPBB3-OLYMPUS/latestSuccessful/artifact/PACKAGE/Release-Files">Olympus</a></p>
+        </li>
+    </ul>
+</div>
+{% endblock %}
