@@ -128,7 +128,7 @@ class DefaultController extends Controller
     public function downloadsAction()
     {
         // Make this false when the most recent release is not an RC/Alpha/Beta
-        $latestDevelopment = false;
+        $latestDevelopment = true;
         $previousVersion = '3.0.12';
         $currentVersion = '3.1.0-a1';
         $currentBranch = '3.1/unstable';
