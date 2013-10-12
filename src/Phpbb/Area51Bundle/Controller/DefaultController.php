@@ -131,17 +131,17 @@ class DefaultController extends Controller
         $latestDevelopment = false;
         $previousVersion = '3.0.12';
         $currentVersion = '3.1.0-a1';
-        $currentBranch = '3.1';
+        $currentBranch = '3.1/unstable';
         $currentVersionFiles =  'https://download.phpbb.com/pub/release/' . $currentBranch
             . '/' . $currentVersion . '/';
         $currentUpgradeFiles =  'https://download.phpbb.com/pub/release/' . $currentBranch
             . '/update/to_' . $currentVersion . '/';
 
         return array(
-            'active_tab'    => 'downloads',
-            'latestDevelopment' => $latestDevelopment,
-            'previousVersion'  => $previousVersion,
-            'currentVersion' => $currentVersion,
+            'active_tab'            => 'downloads',
+            'latestDevelopment'     => $latestDevelopment,
+            'previousVersion'       => $previousVersion,
+            'currentVersion'        => $currentVersion,
             'currentVersionFiles'   => $currentVersionFiles,
             'currentUpgradeFiles'   => $currentUpgradeFiles,
         );
