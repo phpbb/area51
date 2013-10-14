@@ -131,6 +131,7 @@ class DefaultController extends Controller
         $latestDevelopment = true;
         $previousVersion = '3.0.12';
         $currentVersion = '3.1.0-a1';
+        $later = true; // True if branch is 3.1 or later
         $currentBranch = '3.1/unstable';
         $currentVersionFiles =  'https://download.phpbb.com/pub/release/' . $currentBranch
             . '/' . $currentVersion . '/';
@@ -144,6 +145,7 @@ class DefaultController extends Controller
             'currentVersion'        => $currentVersion,
             'currentVersionFiles'   => $currentVersionFiles,
             'currentUpgradeFiles'   => $currentUpgradeFiles,
+            'later'               => $later,
         );
     }
 }
