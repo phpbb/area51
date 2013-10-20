@@ -1,11 +1,13 @@
 body {
 	margin:0;
-	padding:0;
+	padding: 0;
 }
 
 * html #content {
 	margin-top:0;
 }
+
+
 
 
 #phpbb-header-bar {
@@ -14,14 +16,12 @@ body {
 	-moz-background-origin:padding;
 	background:#114070 none repeat scroll 0 0;
 	display:block;
-	height:38px;
 	position:relative;
-	width:100%;
+	overflow: hidden;
 	font-family: arial,FreeSans,Helvetica,sans-serif;
     font-size: 12px;
 }
 #phpbb-header-bar ul.phpbb-menu {
-	float:left;
 	font-family:arial,FreeSans,Helvetica,sans-serif;
 	list-style-type:none;
 	margin:0px 0 0 10px;
@@ -68,11 +68,12 @@ body {
 #phpbb-sub-header {
 	background-color:#3C78B5;
 	color:#F8F8F8;
-	height:29px;
+	min-height:29px;
 	margin:0;
 	padding:4px 8px 0 6px;
 	line-height:16px;
 	position:relative;
+	overflow: hidden;
 }
 #phpbb-sub-header a, #phpbb-sub-header h1 {
 	font-family: "Trebuchet MS",Verdana,sans-serif;
@@ -114,4 +115,29 @@ body {
 
 #phpbb-sub-header a.active, #phpbb-sub-header a:active.active, #phpbb-sub-header a:visited.active, #phpbb-sub-header a:hover.active {
 	background-color: #FFFFFF;
+}
+
+@media only screen and (max-width: 700px), only screen and (max-device-width: 700px)
+{
+	#wrap {
+		padding: 0 5px;
+	}
+
+	#phpbb-header-bar .phpbb-menu li.phpbb-logo {
+		display: block;
+		overflow: hidden;
+	}
+
+	#phpbb-header-bar .phpbb-menu li.phpbb-logo a {
+		float: none;
+		margin: 0 auto;
+	}
+
+	#phpbb-header-bar .phpbb-menu li a {
+		margin-top: 0;
+	}
+
+	#phpbb-sub-header > div:first-of-type, #search-box {
+		display: none;
+	}
 }
