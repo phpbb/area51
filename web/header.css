@@ -121,6 +121,7 @@ body {
 {
 	#wrap {
 		padding: 0 5px;
+		margin-top: 0 !important;
 	}
 
 	#phpbb-header-bar .phpbb-menu li.phpbb-logo {
