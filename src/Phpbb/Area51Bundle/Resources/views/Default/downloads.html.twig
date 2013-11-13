@@ -16,10 +16,11 @@ li p {
     {% if latestDevelopment %}
     <h1>Latest Development Release: {{ currentVersion }} </h1>
     <p>You can view the full set of files <a href="{{ currentVersionFiles }}">here</a></p>
-    <ul>
-        <li>
-            <p>Full Package - <a href="{{ currentVersionFiles }}phpBB-{{ currentVersion }}.zip">zip</a> | <a href="{{ currentVersionFiles }}phpBB-{{ currentVersion }}.tar.bz2">bz2</a></p>
-        </li>
+    <p><strong>Full Package - <a href="{{ currentVersionFiles }}phpBB-{{ currentVersion }}.zip">zip</a> | <a href="{{ currentVersionFiles }}phpBB-{{ currentVersion }}.tar.bz2">bz2</a></strong></p>
+        <h2>Upgrade Files</h2>
+        {% for previousVersion in previousVersions %}
+        <h3>From {{ previousVersion }}</h3>
+        <ul>
         <li>
             <p>Patch Files from {{ previousVersion }} - <a href="{{ currentVersionFiles }}phpBB-{{ currentVersion }}-patch.zip">zip</a> | <a href="{{ currentVersionFiles }}phpBB-{{ currentVersion }}-patch.tar.bz2">bz2</a></p>
         </li>
@@ -41,6 +42,8 @@ li p {
             <p>Language and Style Code Changes from {{ previousVersion }} - <a href="{{ currentUpgradeFiles }}phpBB-{{ previousVersion }}_to_{{ currentVersion }}-codechanges.zip">zip</a> | <a href="{{ currentUpgradeFiles }}phpBB-{{ previousVersion }}_to_{{ currentVersion }}-codechanges.tar.bz2">bz2</a></p>
         </li>
         {% endif %}
+        </ul>
+        {% endfor %}
     </ul>
     {% endif %}
     <h1>Latest repository builds</h1>
