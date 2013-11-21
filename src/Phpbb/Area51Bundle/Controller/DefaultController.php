@@ -129,8 +129,8 @@ class DefaultController extends Controller
     {
         // Make this false when the most recent release is not an RC/Alpha/Beta
         $latestDevelopment = true;
-        $previousVersion = '3.0.12';
-        $currentVersion = '3.1.0-a1';
+        $previousVersions = array('3.0.12', '3.1.0-a1');
+        $currentVersion = '3.1.0-a2';
         $later = true; // True if branch is 3.1 or later
         $currentBranch = '3.1/unstable';
         $currentVersionFiles =  'https://download.phpbb.com/pub/release/' . $currentBranch
@@ -141,7 +141,7 @@ class DefaultController extends Controller
         return array(
             'active_tab'            => 'downloads',
             'latestDevelopment'     => $latestDevelopment,
-            'previousVersion'       => $previousVersion,
+            'previousVersions'       => $previousVersions,
             'currentVersion'        => $currentVersion,
             'currentVersionFiles'   => $currentVersionFiles,
             'currentUpgradeFiles'   => $currentUpgradeFiles,
