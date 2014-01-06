@@ -11,12 +11,19 @@ based on Symfony2.
 
 First of all, install the dependencies.
 
-    $ composer.phar install
+    $ php composer.phar install
 
 Copy `app/config/parameters.dist.yml` to `app/config/parameters.yml`
 and adjust the configuration.
 
 Point your webroot to `/web`.
+
+## Tests
+
+To run tests, after installing dependencies, run the following from
+the project root
+
+    $ bin/phpunit -c app/
 
 ## License
 
