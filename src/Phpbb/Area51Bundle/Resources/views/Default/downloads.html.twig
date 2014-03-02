@@ -31,15 +31,9 @@ li p {
         <li>
             <p>Automatic Update Package from {{ previousVersion }} - <a href="{{ currentVersionFiles }}phpBB-{{ previousVersion }}_to_{{ currentVersion }}.zip">zip</a> | <a href="{{ currentVersionFiles }}phpBB-{{ previousVersion }}_to_{{ currentVersion }}.tar.bz2">bz2</a></p>
         </li>
-        <li>
-            <p>Language and Style Code Changes from {{ previousVersion }} - <a href="{{ currentVersionFiles }}phpBB-{{ previousVersion }}_to_{{ currentVersion }}-codechanges.zip">zip</a> | <a href="{{ currentVersionFiles }}phpBB-{{ previousVersion }}_to_{{ currentVersion }}-codechanges.tar.bz2">bz2</a></p>
-        </li>
         {% else %}
         <li>
             <p>Automatic Update Package from {{ previousVersion }} - <a href="{{ currentUpgradeFiles }}phpBB-{{ previousVersion }}_to_{{ currentVersion }}.zip">zip</a> | <a href="{{ currentUpgradeFiles }}phpBB-{{ previousVersion }}_to_{{ currentVersion }}.tar.bz2">bz2</a></p>
-        </li>
-        <li>
-            <p>Language and Style Code Changes from {{ previousVersion }} - <a href="{{ currentUpgradeFiles }}phpBB-{{ previousVersion }}_to_{{ currentVersion }}-codechanges.zip">zip</a> | <a href="{{ currentUpgradeFiles }}phpBB-{{ previousVersion }}_to_{{ currentVersion }}-codechanges.tar.bz2">bz2</a></p>
         </li>
         {% endif %}
         </ul>
