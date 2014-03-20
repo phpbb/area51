@@ -16,7 +16,11 @@ li p {
     {% if latestDevelopment %}
     <h1>Latest Development Release: {{ currentVersion }} </h1>
     <p>You can view the full set of files <a href="{{ currentVersionFiles }}">here</a></p>
-    <p><strong>Full Package - <a href="{{ currentVersionFiles }}phpBB-{{ currentVersion }}.zip">zip</a> | <a href="{{ currentVersionFiles }}phpBB-{{ currentVersion }}.tar.bz2">bz2</a></strong></p>
+    <p><strong>Full Package - <a href="{{ currentVersionFiles }}phpBB-{{ currentVersion }}.zip">zip</a> | <a href="{{ currentVersionFiles }}phpBB-{{ currentVersion }}.tar.bz2">bz2</a></strong>
+        <br />SHA256: <code>f66175d714e2a5d91fb65b3903b271a0dbdc6982fdb79a8cf009b0979630d198</code></p>
+
+    <p><strong>Subsilver2 Style - <a href="{{ currentVersionFiles }}subsilver2_{{ currentVersion }}.zip">zip</a> | <a href="{{ currentVersionFiles }}subsilver2_{{ currentVersion }}.tar.bz2">bz2</a></strong>
+        <br />SHA256: <code>d8b99ed7e995c55137f50ff949f599af5c6f9fb7351bfff82f264dfaa8bea4f4</code></p>
         <h2>Upgrade Files</h2>
         {% for previousVersion in previousVersions %}
         <h3>From {{ previousVersion }}</h3>
