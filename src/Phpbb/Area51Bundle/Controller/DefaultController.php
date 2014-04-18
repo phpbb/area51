@@ -56,10 +56,10 @@ class DefaultController extends Controller
             ->get();
 
         $ascraeusAvgAge = $factory->create()
-            ->selectAscraeusResolved()
-            ->authorPieChart('assignees')
+            ->selectAscraeus()
+            ->averageAge()
             ->daysSince($trackerStart)
-            ->showUnresolvedTrend()
+            ->monthly()
             ->get();
 
         return array(

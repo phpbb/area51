@@ -13,7 +13,7 @@ class TrackerChart
 	public function __construct($root_path)
 	{
 		$this->root_path = $root_path;
-		$this->jira = 'http://tracker.phpbb.com/';
+		$this->jira = 'https://tracker.phpbb.com/';
 
 		$this->query['versionLabels'] = 'all';
 		$this->query['selectedProjectId'] = '10010';
@@ -151,7 +151,7 @@ class TrackerChart
 
 		if (!file_exists($targetPath) || filemtime($targetPath) + $this->cacheInterval < time())
 		{
-			$this->download($targetPath, $query);
+			@$this->download($targetPath, $query);
 		}
 
 		return $targetPath;
@@ -160,7 +160,6 @@ class TrackerChart
 	public function download($targetPath, $query)
 	{
 		$json = file_get_contents($this->jira . 'rest/gadget/1.0/' . $this->gadgetName . '/generate?' . $query);
-
 		$data = json_decode($json);
 
 		if ($data->location)
