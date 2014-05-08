@@ -11,6 +11,6 @@ git fetch "$REMOTE"
 if [ `git rev-parse "$BRANCH"` != `git rev-parse "$REMOTE/$BRANCH"` ]
 then
 	git reset --hard "$REMOTE/$BRANCH"
-	php -f ./phpBB/bin/phpbbcli.php db:migrate
-	php -f ./phpBB/bin/phpbbcli.php cache:purge
+	phpBB/bin/phpbbcli.php db:migrate
+	phpBB/bin/phpbbcli.php cache:purge
 fi
