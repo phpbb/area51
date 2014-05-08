@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 cd area51-phpbb3
 git fetch origin
