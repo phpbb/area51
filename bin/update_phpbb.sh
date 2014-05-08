@@ -4,7 +4,8 @@ set -e
 REMOTE=origin
 BRANCH=master
 
-cd area51-phpbb3
+HERE=$(dirname "$0")
+cd "$HERE/../area51-phpbb3"
 git fetch "$REMOTE"
 
 if [ `git rev-parse "$BRANCH"` != `git rev-parse "$REMOTE/$BRANCH"` ]
