@@ -15,4 +15,5 @@ then
 	bin/phpbbcli.php db:migrate
 	bin/phpbbcli.php cache:purge
 	rm cache/*.{lock,php}
+	rm -r cache/twig/
 fi
