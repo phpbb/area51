@@ -12,8 +12,8 @@ if [ `git rev-parse "$BRANCH"` != `git rev-parse "$REMOTE/$BRANCH"` ]
 then
 	git reset --hard "$REMOTE/$BRANCH"
 	../composer.phar install --no-dev
-	bin/phpbbcli.php db:migrate
-	bin/phpbbcli.php cache:purge
+	bin/phpbbcli.php --safe-mode db:migrate
+	bin/phpbbcli.php --safe-mode cache:purge
 	rm cache/*.{lock,php}
 	rm -r cache/twig/
 fi
