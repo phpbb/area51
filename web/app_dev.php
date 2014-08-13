@@ -22,9 +22,14 @@ if (isset($_SERVER['HTTP_CLIENT_IP'])
 $loader = require_once __DIR__.'/../app/bootstrap.php.cache';
 require_once __DIR__.'/../app/AppKernel.php';
 
+if (($profilerkey = getenv('QAFOO_SYMFONY_API_KEY')))
+	\QafooLabs\Profiler::startDevelopment($profilerkey);
+}
+
 $kernel = new AppKernel('dev', true);
 $kernel->loadClassCache();
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
 $response->send();
+\QafooLabs\Profiler::setTransactionName($request->attributes->get('_controller', 'notfound'));
 $kernel->terminate($request, $response);
