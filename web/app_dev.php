@@ -22,7 +22,7 @@ if (isset($_SERVER['HTTP_CLIENT_IP'])
 $loader = require_once __DIR__.'/../app/bootstrap.php.cache';
 require_once __DIR__.'/../app/AppKernel.php';
 
-if (($profilerkey = getenv('QAFOO_SYMFONY_API_KEY')))
+if (($profilerkey = getenv('QAFOO_SYMFONY_API_KEY'))) {
 	\QafooLabs\Profiler::startDevelopment($profilerkey);
 }
 

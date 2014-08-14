@@ -16,7 +16,7 @@ $loader->register(true);
 require_once __DIR__.'/../app/AppKernel.php';
 //require_once __DIR__.'/../app/AppCache.php';
 
-if (($profilerkey = getenv('QAFOO_SYMFONY_API_KEY')))
+if (($profilerkey = getenv('QAFOO_SYMFONY_API_KEY'))) {
 	\QafooLabs\Profiler::start($profilerkey);
 }
 
