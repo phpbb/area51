@@ -26,5 +26,9 @@ $kernel->loadClassCache();
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
 $response->send();
-\QafooLabs\Profiler::setTransactionName($request->attributes->get('_controller', 'notfound'));
+
+if (($profilerkey = getenv('QAFOO_SYMFONY_API_KEY'))) {
+	\QafooLabs\Profiler::setTransactionName($request->attributes->get('_controller', 'notfound'));
+}
+
 $kernel->terminate($request, $response);
