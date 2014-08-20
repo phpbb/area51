@@ -11,7 +11,7 @@ git fetch "$REMOTE"
 if [ `git rev-parse "$BRANCH"` != `git rev-parse "$REMOTE/$BRANCH"` ]
 then
 	git reset --hard "$REMOTE/$BRANCH"
-	../composer.phar install --no-dev --optimize-autoloader
+	./composer.phar install --no-dev --optimize-autoloader
 	app/console cache:clear --env=prod
 	app/console cache:warmup --env=prod
 fi
