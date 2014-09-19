@@ -20,11 +20,11 @@ body {
 	overflow: hidden;
 	font-family: arial,FreeSans,Helvetica,sans-serif;
     font-size: 12px;
+    padding: 0 10px;
 }
 #phpbb-header-bar ul.phpbb-menu {
 	font-family:arial,FreeSans,Helvetica,sans-serif;
 	list-style-type:none;
-	margin:0px 0 0 10px;
 	padding:0;
 }
 #phpbb-header-bar .phpbb-menu li {
@@ -64,12 +64,16 @@ body {
 	overflow:hidden;
 }
 
+#exit-phpbb a {
+	padding: 0 10px;
+}
+
 #phpbb-sub-header {
 	background-color:#3C78B5;
 	color:#F8F8F8;
 	min-height:29px;
 	margin:0;
-	padding:4px 8px 0 6px;
+	padding:4px 20px 0 20px;
 	line-height:16px;
 	position:relative;
 	overflow: hidden;
@@ -114,11 +118,19 @@ body {
 	background-color: #FFFFFF;
 }
 
+.search-header {
+	margin-right: 0;
+}
+
 @media only screen and (max-width: 900px), only screen and (max-device-width: 900px)
 {
 	#exit-phpbb img {
 		max-width: 150px;
 		margin-top: 5px;
+	}
+
+	#phpbb-sub-header > div:first-of-type {
+		display: none;
 	}
 }
 
@@ -145,7 +157,12 @@ body {
 		min-width: 85px;
 	}
 
-	#phpbb-sub-header > div:first-of-type, #search-box {
+	#phpbb-sub-header {
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+
+	#search-box {
 		display: none;
 	}
 }
