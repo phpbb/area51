@@ -127,6 +127,7 @@ class DefaultController extends Controller
      */
     public function downloadsAction()
     {
+        $this->redirect('https://area51.phpbb.com', 302);
         // Make this false when the most recent release is not an RC/Alpha/Beta
         $latestDevelopment = true;
 		$previousVersions = array('3.0.12', '3.1.0-a1', '3.1.0-a2', '3.1.0-a3', '3.1.0-b1', '3.1.0-b2', '3.1.0-b3', '3.1.0-b4', '3.1.0-RC1', '3.1.0-RC2', '3.1.0-RC3', '3.1.0-RC4', '3.1.0-RC5');
