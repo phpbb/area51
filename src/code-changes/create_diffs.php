@@ -74,12 +74,30 @@ function generate_diff_file($path)
 	
 	$header = file_get_contents($data_dir . '/template/overall_header.html');
 	$footer = file_get_contents($data_dir . '/template/overall_footer.html');
-	
+
+	//Set up the navigation menu
+	if (strpos($from_version, '3.0') === 0)
+	{
+		$nav = file_get_contents($data_dir . '/template/30_nav.html');
+		$tabs = '<li id="activetab"><a href="/code-changes/3.0.0/"><span>3.0.x</span></a></li>
+		<li><a href="/code-changes/3.1.0/"><span>3.1.x</span></a></li>';
+	}
+	else
+	{
+		$nav = file_get_contents($data_dir . '/template/31_nav.html');
+		$tabs = '<li><a href="/code-changes/3.0.0/"><span>3.0.x</span></a></li>
+		<li id="activetab"><a href="/code-changes/3.1.0/"><span>3.1.x</span></a></li>';
+	}
+	$header = str_replace('{PREV_VERSIONS_NAV}', $nav, $header);
+
 	//Set the active version in the navigation
 	$header = str_replace('<li><a href="/code-changes/' . $from_version . '/">', '<li id="activemenu"><a href="/code-changes/' . $from_version . '/">', $header);
 	
 	//Set the current file being viewed
 	$header = str_replace('{CURRENT_FILE}', '<div style="float: right;"><h2 style="margin-top: 0px;">File: ' . $path . '</h2></div>', $header);
+
+	//Set the active tab
+	$header = str_replace('{TABS}', $tabs, $header);
 	
 	//Build the structure if necessary
 	$dir = $out_dir . '/' . $from_version . '/' . $diff_mode . '/' . $to_version;
@@ -256,7 +274,7 @@ function sort_array(&$array)
 	$array = array_merge($array, $files);
 }
 
-$ignore_folders = array('develop', 'docs', 'install');
+$ignore_folders = array('develop', 'docs', 'install', 'vendor');
 $ignore_files = array('config.php', 'composer.json', 'composer.lock');
 
 $changes = array();
@@ -302,11 +320,29 @@ $header = file_get_contents($data_dir . '/template/overall_header.html');
 $footer = '</ul>';
 $footer .= file_get_contents($data_dir . '/template/overall_footer.html');
 
-//Set the active version in the navigation
+//Set the navigation menu
+if (strpos($from_version, '3.0') === 0)
+{
+	$nav = file_get_contents($data_dir . '/template/30_nav.html');
+	$tabs = '<li id="activetab"><a href="/code-changes/3.0.0/"><span>3.0.x</span></a></li>
+	<li><a href="/code-changes/3.1.0/"><span>3.1.x</span></a></li>';
+}
+else
+{
+	$nav = file_get_contents($data_dir . '/template/31_nav.html');
+	$tabs = '<li><a href="/code-changes/3.0.0/"><span>3.0.x</span></a></li>
+	<li id="activetab"><a href="/code-changes/3.1.0/"><span>3.1.x</span></a></li>';
+}
+$header = str_replace('{PREV_VERSIONS_NAV}', $nav, $header);
+
+//Set up the active version in the navigation
 $header = str_replace('<li><a href="/code-changes/' . $from_version . '/">', '<li id="activemenu"><a href="/code-changes/' . $from_version . '/">', $header);
 
 //Remove the file marker
 $header = str_replace('{CURRENT_FILE}', '', $header);
+
+//Set the active tab
+$header = str_replace('{TABS}', $tabs, $header);
 
 $header .= '<p>The following files have been changed in the update from ' . $from_version . ' to ' . $to_version . ':</p>';
 $header .= '<ul id="browser" class="filetree">';

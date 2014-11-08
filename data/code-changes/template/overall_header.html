@@ -104,7 +104,7 @@ window.onresize = resize_panel;
 		<div id="tabs">
 			<div id="menuSpacer">&nbsp;</div>
 			<ul>
-				<li id="activetab"><a><span>3.0.x</span></a></li>
+				{TABS}
 			</ul>
 			{CURRENT_FILE}
 		</div>
@@ -114,21 +114,6 @@ window.onresize = resize_panel;
 				<div id="diff_content">
 					<div id="toggle"><a id="toggle-handle" accesskey="m" title="Hide or display the side menu" onclick="switch_menu(); return false;" href="#"></a></div>
 					<div id="menu">
-						<ul>
-							<li class="header">Previous Versions</li>
-							<li><a href="/code-changes/3.0.11/"><span>3.0.11 to 3.0.12</span></a></li>
-							<li><a href="/code-changes/3.0.10/"><span>3.0.10 to 3.0.12</span></a></li>
-							<li><a href="/code-changes/3.0.9/"><span>3.0.9 to 3.0.12</span></a></li>
-							<li><a href="/code-changes/3.0.8/"><span>3.0.8 to 3.0.12</span></a></li>
-							<li><a href="/code-changes/3.0.7-PL1/"><span>3.0.7-PL1 to 3.0.12</span></a></li>
-							<li><a href="/code-changes/3.0.7/"><span>3.0.7 to 3.0.12</span></a></li>
-							<li><a href="/code-changes/3.0.6/"><span>3.0.6 to 3.0.12</span></a></li>
-							<li><a href="/code-changes/3.0.5/"><span>3.0.5 to 3.0.12</span></a></li>
-							<li><a href="/code-changes/3.0.4/"><span>3.0.4 to 3.0.12</span></a></li>
-							<li><a href="/code-changes/3.0.3/"><span>3.0.3 to 3.0.12</span></a></li>
-							<li><a href="/code-changes/3.0.2/"><span>3.0.2 to 3.0.12</span></a></li>
-							<li><a href="/code-changes/3.0.1/"><span>3.0.1 to 3.0.12</span></a></li>
-							<li><a href="/code-changes/3.0.0/"><span>3.0.0 to 3.0.12</span></a></li>
-						</ul>
+						{PREV_VERSIONS_NAV}
 					</div>
 					<div id="main">
