@@ -50,5 +50,5 @@ copy_phpbb_docs develop-ascraeus "$DOCS/31x/"
 cd phpBB
 ../composer.phar install
 cd ../build
-../phpBB/vendor/bin/phing docs
+../phpBB/vendor/bin/phing docs-all
 rsync -a --delete api/output/ "$DOCS/code/"
