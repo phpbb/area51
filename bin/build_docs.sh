@@ -1,9 +1,7 @@
-#!/bin/sh
-set -e
-set -x
+#!/usr/bin/env bash
+set -ex
 
-HERE=$(dirname "$0")
-ROOT=$(realpath "$HERE/..")
+ROOT=`cd $(dirname "$BASH_SOURCE"); cd ..; pwd`
 DOCS="$ROOT/web/docs"
 REPO="$ROOT/docs-phpbb"
 
