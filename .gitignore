@@ -2,6 +2,7 @@ app/cache
 data/code-changes/*
 web/code-changes/*
 web/writable/stats/*
+web/phpBB/*
 vendor
 *.cache
 *.log
