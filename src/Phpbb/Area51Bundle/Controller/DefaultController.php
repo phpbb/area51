@@ -127,13 +127,12 @@ class DefaultController extends Controller
      */
     public function downloadsAction()
     {
-        $this->redirect('https://area51.phpbb.com', 302);
         // Make this false when the most recent release is not an RC/Alpha/Beta
         $latestDevelopment = true;
-		$previousVersions = array('3.0.12', '3.1.0-a1', '3.1.0-a2', '3.1.0-a3', '3.1.0-b1', '3.1.0-b2', '3.1.0-b3', '3.1.0-b4', '3.1.0-RC1', '3.1.0-RC2', '3.1.0-RC3', '3.1.0-RC4', '3.1.0-RC5');
-		$currentVersion = '3.1.0-RC6';
-		$mainPackageSha = '719a43cae1b771620f3df94bc935c6cee6f201b8641910475886e4c68fa8609b';
-		$subsilverSha = 'c28700ddfb832f2eb8214b2ff42ae3c3d019a04804ba47c4c4d5307dd81b88dd';
+		$previousVersions = array('3.0.12', '3.0.13', '3.1.0', '3.1.1', '3.1.2');
+		$currentVersion = '3.1.3-RC1';
+		$mainPackageSha = 'b129a641a0cc931b8617d77ab62104ded61e391eacec8bc7178c41d71601fac1';
+		$subsilverSha = '2f20d11d73239bbe50322e2e38290b871808f2e980c6056d97e3bd87912ea411';
         $later = true; // True if branch is 3.1 or later
         $currentBranch = '3.1/unstable';
         $currentVersionFiles =  'https://download.phpbb.com/pub/release/' . $currentBranch
