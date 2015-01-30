@@ -3,8 +3,8 @@ mode="side-by-side"
 basedir=`cd $(dirname "$BASH_SOURCE"); cd ..; pwd`
 outdir=`cd "$basedir"; cd ./web/code-changes/; pwd`
 datadir=`cd "$basedir"; cd ./data/code-changes/; pwd`
-latest="3.0.13"
-releases="3.0.0 3.0.1 3.0.2 3.0.3 3.0.4 3.0.5 3.0.6 3.0.7 3.0.7-PL1 3.0.8 3.0.9 3.0.10 3.0.11 3.0.12"
+latest="3.0.13-PL1"
+releases="3.0.0 3.0.1 3.0.2 3.0.3 3.0.4 3.0.5 3.0.6 3.0.7 3.0.7-PL1 3.0.8 3.0.9 3.0.10 3.0.11 3.0.12 3.0.13"
 
 # Set up the file structure
 if [ ! -d "$datadir/repo" ];
