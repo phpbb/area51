@@ -129,10 +129,10 @@ class DefaultController extends Controller
     {
         // Make this false when the most recent release is not an RC/Alpha/Beta
         $latestDevelopment = true;
-		$previousVersions = array('3.0.12', '3.0.13', '3.1.0', '3.1.1', '3.1.2');
-		$currentVersion = '3.1.3-RC1';
-		$mainPackageSha = 'b129a641a0cc931b8617d77ab62104ded61e391eacec8bc7178c41d71601fac1';
-		$subsilverSha = '2f20d11d73239bbe50322e2e38290b871808f2e980c6056d97e3bd87912ea411';
+		$previousVersions = array('3.0.12', '3.0.13', '3.0.13-PL1', '3.1.0', '3.1.1', '3.1.2', '3.1.3-RC1');
+		$currentVersion = '3.1.3-RC2';
+		$mainPackageSha = 'da6b116cf770fa8b2784db10f23ae29fa7adcb238a5246e84a3b64179995b01e';
+		$subsilverSha = '382ea6ca9c97c6e4cf441fc7b7b97f4b74ddc69828b70e8dd939dd0b1d37582e';
         $later = true; // True if branch is 3.1 or later
         $currentBranch = '3.1/unstable';
         $currentVersionFiles =  'https://download.phpbb.com/pub/release/' . $currentBranch
