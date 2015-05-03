@@ -15,4 +15,7 @@ then
 	app/console cache:clear --env=prod
 	app/console cache:warmup --env=prod
 	chmod -R 777 app/cache/*
+	rm -rf app/cache/prod/
+	mkdir app/cache/prod/
+	chmod -R 777 app/cache/*
 fi
