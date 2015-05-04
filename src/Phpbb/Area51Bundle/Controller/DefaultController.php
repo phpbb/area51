@@ -131,7 +131,7 @@ class DefaultController extends Controller
         $this->redirect('https://area51.phpbb.com', 302);
 
         // Make this false when the most recent release is not an RC/Alpha/Beta
-        $latestDevelopment = true;
+        $latestDevelopment = false;
         $previousVersions = array('3.0.12', '3.0.13', '3.0.13-PL1', '3.1.0', '3.1.1', '3.1.2', '3.1.3', '3.1.4-RC1');
         $currentVersion = '3.1.4-RC2';
         $mainPackageSha = '3f218bf80eb568ab60927a1ec288180e98299afc736f1a645a191b8cca890625';
