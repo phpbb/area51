@@ -52,7 +52,7 @@ make_sphinx_docs()
 	git reset --hard "origin/$2"
     cd development
     make html
-	rsync -a --delete '_build/html/' "$2"
+	rsync -a --delete '_build/html/' "$3"
 }
 
 update_repo "$PHPBBREPO" 'https://github.com/phpbb/phpbb.git' "$ROOT/area51-phpbb3"
