@@ -3,7 +3,8 @@ set -ex
 
 ROOT=`cd $(dirname "$BASH_SOURCE"); cd ..; pwd`
 DOCS="$ROOT/web/docs"
-REPO="$ROOT/docs-phpbb"
+PHPBBREPO="$ROOT/docs-phpbb"
+DOCREPO="$ROOT/documentation"
 
 # $1 local directory
 # $2 repo URL
@@ -28,21 +29,43 @@ update_repo()
 	fi
 }
 
-# $1 branch name
-# $2 target directory
+# $1 repository directory
+# $2 branch name
+# $3 target directory
 copy_phpbb_docs()
 {
-	mkdir -p "$2"
-	git checkout --force "$1"
-	git reset --hard "origin/$1"
-	rsync -a --delete 'phpBB/docs/' "$2"
+    cd $1
+	mkdir -p "$3"
+	git checkout --force "$2"
+	git reset --hard "origin/$2"
+	rsync -a --delete 'phpBB/docs/' "$3"
 }
 
-update_repo "$REPO" 'https://github.com/phpbb/phpbb.git' "$ROOT/area51-phpbb3"
+# $1 repository directory
+# $2 branch name
+# $3 target directory
+make_sphinx_docs()
+{
+    cd $1
+	mkdir -p "$3"
+	git checkout --force "$2"
+	git reset --hard "origin/$2"
+    cd development
+    make html
+	rsync -a --delete '_build/html/' "$2"
+}
+
+update_repo "$PHPBBREPO" 'https://github.com/phpbb/phpbb.git' "$ROOT/area51-phpbb3"
+update_repo "$DOCREPO" 'https://github.com/phpbb/documentation.git'
 
 # Copy phpBB docs directory
-copy_phpbb_docs develop-olympus "$DOCS/30x/"
-copy_phpbb_docs develop-ascraeus "$DOCS/31x/"
+copy_phpbb_docs $PHPBBREPO "3.0.x" "$DOCS/30x/"
+copy_phpbb_docs $PHPBBREPO "3.1.x" "$DOCS/31x/"
+copy_phpbb_docs $PHPBBREPO "master" "$DOCS/master/"
+
+# Generate developer documentation
+make_sphinx_docs $DOCREPO "3.1.x" "$DOCS/dev/31x/"
+make_sphinx_docs $DOCREPO "master" "$DOCS/dev/master/"
 
 # Generate API documentation
 cd phpBB
