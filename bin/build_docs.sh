@@ -69,6 +69,7 @@ make_sphinx_docs $DOCREPO "master" "$DOCS/dev/master/"
 
 # Generate API documentation
 cd $PHPBBREPO
+git checkout 3.1.x
 cd phpBB
 ../composer.phar install
 cd ../build
