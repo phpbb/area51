@@ -19,8 +19,10 @@ li p {
     <p><strong>Full Package - <a href="{{ currentVersionFiles }}phpBB-{{ currentVersion }}.zip">zip</a> | <a href="{{ currentVersionFiles }}phpBB-{{ currentVersion }}.tar.bz2">bz2</a></strong>
         <br />SHA256: <code>{{ mainPackageSha }}</code></p>
 
+	 {% if subsilverSha != false %}
     <p><strong>Subsilver2 Style - <a href="{{ currentVersionFiles }}subsilver2_{{ currentVersion }}.zip">zip</a> | <a href="{{ currentVersionFiles }}subsilver2_{{ currentVersion }}.tar.bz2">bz2</a></strong>
         <br />SHA256: <code>{{ subsilverSha }}</code></p>
+	{% endif %}
         <h2>Upgrade Files</h2>
         {% for previousVersion in previousVersions %}
         <h3>From {{ previousVersion }}</h3>
@@ -47,7 +49,9 @@ li p {
     <h1>Latest repository builds</h1>
     <ul>
         <li>
-            <p><a href="https://bamboo.phpbb.com/browse/PHPBB3-DEVELOP/latestSuccessful/artifact/JOBPACKAGE/Release-Files">Develop</a></p>
+            <p><a href="https://bamboo.phpbb.com/browse/PHPBB3-RHEA/latestSuccessful/artifact/JOBPACKAGE/Release-Files">Rhea</a></p> </li>
+        <li>
+            <p><a href="https://bamboo.phpbb.com/browse/PHPBB3-DEVELOP/latestSuccessful/artifact/JOBPACKAGE/Release-Files">Ascraeus</a></p>
         </li>
         <li>
             <p><a href="https://bamboo.phpbb.com/browse/PHPBB3-OLYMPUS/latestSuccessful/artifact/PACKAGE/Release-Files">Olympus</a></p>
