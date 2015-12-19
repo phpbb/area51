@@ -131,8 +131,8 @@ class DefaultController extends Controller
         $latestDevelopment = true;
 
         $previousVersions = array('3.0.14', '3.1.0', '3.1.1', '3.1.2', '3.1.3', '3.1.4', '3.1.5', '3.1.6');
-        $currentVersion = '3.2.0-a1';
-        $mainPackageSha = '6be2f4a14159b8506e8d2c8068985120233fe548778e7c581405cbe3d5fd9f42';
+        $currentVersion = '3.2.0-a2';
+        $mainPackageSha = '1b8ae97e9befb40587e9800cd6a80bd870f903cf1d23112dad8abda2447ac407 ';
         $subsilverSha = false;
         $later = true; // True if branch is 3.1 or later
         $currentBranch = '3.2/unstable';
