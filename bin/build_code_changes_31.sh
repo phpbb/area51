@@ -3,7 +3,7 @@ mode="side-by-side"
 basedir=`cd $(dirname "$BASH_SOURCE"); cd ..; pwd`
 outdir=`cd "$basedir"; cd ./web/code-changes/; pwd`
 datadir=`cd "$basedir"; cd ./data/code-changes/; pwd`
-latest="3.1.7-PL1"
+latest="3.1.7-pl1"
 releases="3.1.0 3.1.1 3.1.2 3.1.3 3.1.4 3.1.5 3.1.6 3.1.7"
 
 # Set up the file structure
