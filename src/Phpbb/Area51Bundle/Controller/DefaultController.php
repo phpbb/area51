@@ -106,8 +106,6 @@ class DefaultController extends Controller
         $previousVersions = array('3.0.14', '3.1.0', '3.1.1', '3.1.2', '3.1.3', '3.1.4', '3.1.5', '3.1.6', '3.1.7-pl1');
         $currentVersion = '3.2.0-b1';
         $mainPackageSha = '0ca61c45ebf3d9d46a0a684c7193d3931174638ec4dffae78d44050765032613';
-        $subsilverSha = false;
-        $later = true; // True if branch is 3.1 or later
         $currentBranch = '3.2/unstable';
         $currentVersionFiles =  'https://download.phpbb.com/pub/release/' . $currentBranch
             . '/' . $currentVersion . '/';
@@ -121,9 +119,7 @@ class DefaultController extends Controller
             'currentVersion'        => $currentVersion,
             'currentVersionFiles'   => $currentVersionFiles,
             'currentUpgradeFiles'   => $currentUpgradeFiles,
-            'later'               => $later,
             'mainPackageSha'    => $mainPackageSha,
-            'subsilverSha'  => $subsilverSha,
         );
     }
 }
