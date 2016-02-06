@@ -23,15 +23,9 @@ li p {
         {% for previousVersion in previousVersions %}
         <h3>From {{ previousVersion }}</h3>
         <ul>
-        {% if later %}
         <li>
             <p>Automatic Update Package from {{ previousVersion }} - <a href="{{ currentVersionFiles }}phpBB-{{ previousVersion }}_to_{{ currentVersion }}.zip">zip</a> | <a href="{{ currentVersionFiles }}phpBB-{{ previousVersion }}_to_{{ currentVersion }}.tar.bz2">bz2</a></p>
         </li>
-        {% else %}
-        <li>
-            <p>Automatic Update Package from {{ previousVersion }} - <a href="{{ currentUpgradeFiles }}phpBB-{{ previousVersion }}_to_{{ currentVersion }}.zip">zip</a> | <a href="{{ currentUpgradeFiles }}phpBB-{{ previousVersion }}_to_{{ currentVersion }}.tar.bz2">bz2</a></p>
-        </li>
-        {% endif %}
         <li>
             <p>Changed Files from {{ previousVersion }} - <a href="{{ currentVersionFiles }}phpBB-{{ currentVersion }}-files.zip">zip</a> | <a href="{{ currentVersionFiles }}phpBB-{{ currentVersion }}-files.tar.bz2">bz2</a></p>
         </li>

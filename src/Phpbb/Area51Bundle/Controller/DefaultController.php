@@ -89,8 +89,9 @@ class DefaultController extends Controller
     public function docsRedirectAction($path)
     {
         if (preg_match('#^/3#', $path)) {
-            return $this->redirect('http://area51.phpbb.com/docs/30x'.$path, 301);
+            return $this->redirect('http://area51.phpbb.com/docs/30x', 301);
         }
+
         return $this->redirect($this->generateUrl('index'), 301);
     }
 
