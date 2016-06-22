@@ -61,10 +61,12 @@ update_repo "$DOCREPO" 'https://github.com/phpbb/documentation.git'
 # Copy phpBB docs directory
 copy_phpbb_docs $PHPBBREPO "3.0.x" "$DOCS/30x/"
 copy_phpbb_docs $PHPBBREPO "3.1.x" "$DOCS/31x/"
+copy_phpbb_docs $PHPBBREPO "3.2.x" "$DOCS/32x/"
 copy_phpbb_docs $PHPBBREPO "master" "$DOCS/master/"
 
 # Generate developer documentation
 make_sphinx_docs $DOCREPO "3.1.x" "$DOCS/dev/31x/"
+make_sphinx_docs $DOCREPO "3.2.x" "$DOCS/dev/32x/"
 make_sphinx_docs $DOCREPO "master" "$DOCS/dev/master/"
 
 # Generate API documentation
