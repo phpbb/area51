@@ -104,8 +104,8 @@ class DefaultController extends Controller
         $latestDevelopment = true;
 
         $previousVersions = array('3.0.14', '3.1.0', '3.1.1', '3.1.2', '3.1.3', '3.1.4', '3.1.5', '3.1.6', '3.1.7-pl1');
-        $currentVersion = '3.2.0-b2';
-        $mainPackageSha = 'fbf160af0cefd9f4683d1a467a2ca9df808793cf70401eace0bcf849128f060c';
+        $currentVersion = '3.2.0-RC1';
+        $mainPackageSha = 'f1187b64c5a6581e4460175eebbe25932be7afc931601d5e86649a0c2e9f2181';
         $currentBranch = '3.2/unstable';
         $currentVersionFiles =  'https://download.phpbb.com/pub/release/' . $currentBranch
             . '/' . $currentVersion . '/';
