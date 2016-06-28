@@ -103,7 +103,7 @@ class DefaultController extends Controller
         // Make this false when the most recent release is not an RC/Alpha/Beta
         $latestDevelopment = true;
 
-        $previousVersions = array('3.0.14', '3.1.0', '3.1.1', '3.1.2', '3.1.3', '3.1.4', '3.1.5', '3.1.6', '3.1.7-pl1', '3.1.8', '3.1.9');
+        $previousVersions = array('3.1.0', '3.1.1', '3.1.2', '3.1.3', '3.1.4', '3.1.5', '3.1.6', '3.1.7-pl1', '3.1.8', '3.1.9');
         $currentVersion = '3.2.0-RC1';
         $mainPackageSha = 'f1187b64c5a6581e4460175eebbe25932be7afc931601d5e86649a0c2e9f2181';
         $currentBranch = '3.2/unstable';
