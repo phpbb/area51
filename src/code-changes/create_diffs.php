@@ -338,14 +338,24 @@ if (strpos($from_version, '3.0') === 0)
 {
 	$nav = file_get_contents($data_dir . '/template/30_nav.html');
 	$tabs = '<li id="activetab"><a href="/code-changes/3.0.0/"><span>3.0.x</span></a></li>
-	<li><a href="/code-changes/3.1.0/"><span>3.1.x</span></a></li>';
+	<li><a href="/code-changes/3.1.0/"><span>3.1.x</span></a></li>
+	<li><a href="/code-changes/3.2.0/"><span>3.2.x</span></a></li>';
 }
-else
+else if (strpos($from_version, '3.1') === 0)
 {
 	$nav = file_get_contents($data_dir . '/template/31_nav.html');
 	$tabs = '<li><a href="/code-changes/3.0.0/"><span>3.0.x</span></a></li>
-	<li id="activetab"><a href="/code-changes/3.1.0/"><span>3.1.x</span></a></li>';
+	<li id="activetab"><a href="/code-changes/3.1.0/"><span>3.1.x</span></a></li>
+	<li><a href="/code-changes/3.2.0/"><span>3.2.x</span></a></li>';
 }
+else if (strpos($from_version, '3.2') === 0)
+{
+	$nav = file_get_contents($data_dir . '/template/32_nav.html');
+	$tabs = '<li><a href="/code-changes/3.0.0/"><span>3.0.x</span></a></li>
+	<li><a href="/code-changes/3.1.0/"><span>3.1.x</span></a></li>
+	<li id="activetab"><a href="/code-changes/3.2.0/"><span>3.2.x</span></a></li>';
+}
+
 $header = str_replace('{PREV_VERSIONS_NAV}', $nav, $header);
 
 //Set up the active version in the navigation
