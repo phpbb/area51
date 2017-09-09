@@ -64,10 +64,8 @@ copy_phpbb_docs $PHPBBREPO "3.1.x" "$DOCS/31x/"
 copy_phpbb_docs $PHPBBREPO "3.2.x" "$DOCS/32x/"
 copy_phpbb_docs $PHPBBREPO "master" "$DOCS/master/"
 
-# Generate developer documentation
-make_sphinx_docs $DOCREPO "3.1.x" "$DOCS/dev/31x/"
-make_sphinx_docs $DOCREPO "3.2.x" "$DOCS/dev/32x/"
-make_sphinx_docs $DOCREPO "master" "$DOCS/dev/master/"
+cd $DOCREPO
+sphinx-versioning build -w 3.1.x -w 3.2.x -w master development "$DOCS/dev/"
 
 # Generate API documentation
 cd $PHPBBREPO
