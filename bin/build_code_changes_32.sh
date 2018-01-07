@@ -3,8 +3,8 @@ mode="side-by-side"
 basedir=`cd $(dirname "$BASH_SOURCE"); cd ..; pwd`
 outdir=`cd "$basedir"; cd ./web/code-changes/; pwd`
 datadir=`cd "$basedir"; cd ./data/code-changes/; pwd`
-latest="3.2.1"
-releases="3.2.0"
+latest="3.2.2"
+releases="3.2.0 3.2.1"
 
 # Set up the file structure
 if [ ! -d "$datadir/repo" ];
@@ -20,7 +20,7 @@ fi
 # Clone the repository
 if [ ! -d "$datadir/repo/phpBB" ];
 then
-	git clone git://github.com/phpbb/phpbb3.git "$datadir"/repo
+	git clone git://github.com/phpbb/phpbb.git "$datadir"/repo
 	code=$?
 	if [ $code -ne 0 ];
 	then
