@@ -14,6 +14,6 @@ then
 	../composer.phar install --no-dev --optimize-autoloader
 	bin/phpbbcli.php --safe-mode db:migrate
 	bin/phpbbcli.php --safe-mode cache:purge
-	rm cache/production/*.{lock,php}
-	rm -r cache/production/twig/
+	#rm cache/production/*.{lock,php}
+	#rm -r cache/production/twig/
 fi
