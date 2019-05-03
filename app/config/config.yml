@@ -10,8 +10,9 @@ framework:
     validation:      { enable_annotations: true }
     templating:
         engines: ['twig']
-        assets_version:         111020132212
-        assets_version_format:  %%s?v%%s
+    assets:
+        version:         111020132212
+        version_format:  %%s?v%%s
     session: ~
     esi: { enabled: true }
 
