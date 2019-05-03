@@ -1,4 +1,4 @@
 services:
     tracker_chart_factory:
         class: Phpbb\Area51Bundle\TrackerChartFactory
-        arguments: [%tracker_chart.root_path%]
+        arguments: ["%tracker_chart.root_path%"]
