@@ -14,7 +14,7 @@ then
 	./composer.phar install --no-dev --optimize-autoloader
 	app/console cache:clear --env=prod
 	app/console cache:warmup --env=prod
-	chmod -R 777 app/cache/*
+	chmod -R 777 var/cache/*
 	rm -rf var/cache/prod/
 	mkdir var/cache/prod/
 	chmod -R 777 var/cache/*
