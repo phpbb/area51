@@ -49,7 +49,7 @@ function generate_diff_file($path)
 	{
 		$file1 = '';
 	}
-	
+
 	if(file_exists($data_dir . '/versions/' . $to_version . '/' . $path))
 	{
 		$file2 = file_get_contents($data_dir . '/versions/' . $to_version . '/' . $path);
@@ -71,7 +71,7 @@ function generate_diff_file($path)
 	}
 
 	$output = $renderer->get_diff_content($diff);
-	
+
 	$header = file_get_contents($data_dir . '/template/overall_header.html');
 	$footer = file_get_contents($data_dir . '/template/overall_footer.html');
 
@@ -79,23 +79,23 @@ function generate_diff_file($path)
 	if (strpos($from_version, '3.0') === 0)
 	{
 		$nav = file_get_contents($data_dir . '/template/30_nav.html');
-		$tabs = '<li id="activetab"><a href="/code-changes/3.0.0/"><span>3.0.x</span></a></li>
-		<li><a href="/code-changes/3.1.0/"><span>3.1.x</span></a></li>
-		<li><a href="/code-changes/3.2.0/"><span>3.2.x</span></a></li>';
+		$tabs = '<li id="activetab"><a href="/code-changes/3.0.13-PL1/"><span>3.0.x</span></a></li>
+		<li><a href="/code-changes/3.1.11/"><span>3.1.x</span></a></li>
+		<li><a href="/code-changes/"><span>3.2.x</span></a></li>';
 	}
 	else if (strpos($from_version, '3.1') === 0)
 	{
 		$nav = file_get_contents($data_dir . '/template/31_nav.html');
-		$tabs = '<li><a href="/code-changes/3.0.0/"><span>3.0.x</span></a></li>
-		<li id="activetab"><a href="/code-changes/3.1.0/"><span>3.1.x</span></a></li>
-		<li><a href="/code-changes/3.2.0/"><span>3.2.x</span></a></li>';
+		$tabs = '<li><a href="/code-changes/3.0.13-PL1/"><span>3.0.x</span></a></li>
+		<li id="activetab"><a href="/code-changes/3.1.11/"><span>3.1.x</span></a></li>
+		<li><a href="/code-changes/"><span>3.2.x</span></a></li>';
 	}
 	else if (strpos($from_version, '3.2') === 0)
 	{
 		$nav = file_get_contents($data_dir . '/template/32_nav.html');
-		$tabs = '<li><a href="/code-changes/3.0.0/"><span>3.0.x</span></a></li>
-		<li><a href="/code-changes/3.1.0/"><span>3.1.x</span></a></li>
-		<li id="activetab"><a href="/code-changes/3.2.0/"><span>3.2.x</span></a></li>';
+		$tabs = '<li><a href="/code-changes/3.0.13-PL1/"><span>3.0.x</span></a></li>
+		<li><a href="/code-changes/3.1.11/"><span>3.1.x</span></a></li>
+		<li id="activetab"><a href="/code-changes/"><span>3.2.x</span></a></li>';
 	}
 	else
 	{
@@ -105,13 +105,13 @@ function generate_diff_file($path)
 
 	//Set the active version in the navigation
 	$header = str_replace('<li><a href="/code-changes/' . $from_version . '/">', '<li id="activemenu"><a href="/code-changes/' . $from_version . '/">', $header);
-	
+
 	//Set the current file being viewed
 	$header = str_replace('{CURRENT_FILE}', '<div style="float: right;"><h2 style="margin-top: 0px;">File: ' . $path . '</h2></div>', $header);
 
 	//Set the active tab
 	$header = str_replace('{TABS}', $tabs, $header);
-	
+
 	//Build the structure if necessary
 	$dir = $out_dir . '/' . $from_version . '/' . $diff_mode . '/' . $to_version;
 	if(!is_dir($dir))
@@ -224,7 +224,7 @@ function print_structure(&$array, $path, &$output)
 			$modified = false;
 			$class = get_icon($path . $folder, false);
 			$output .= '<li><span class="' . $class . '"><a href="' . $diff_mode . '/' . $to_version . '/' . $id . '.html">' . $folder . '</a></span></li>' . "\n";
-			
+
 			//Generate the diff view that's being linked to
 			generate_diff_file($path . $folder);
 		}
@@ -254,7 +254,7 @@ function create_entry(&$array, $entry, $depth = 0)
 			$array[$entry[$depth]] = array();
 		}
 	}
-	
+
 	if($depth + 1 < sizeof($entry))
 	{
 		create_entry($array[$entry[$depth]], $entry, ++$depth);
@@ -300,13 +300,13 @@ foreach($file as $line)
 	//M	phpBB/adm/index.php
 	$info = explode("\t", $line);
 	$status = $info[0];
-	
+
 	$structure = explode('/', $info[1]);
 	if($structure[0] != 'phpBB')
 	{
 		continue;
 	}
-	
+
 	//Check ignored files and folders, only in the root level
 	if(isset($structure[1]) && (in_array($structure[1], $ignore_folders) || in_array($structure[1], $ignore_files)))
 	{
@@ -337,23 +337,23 @@ $footer .= file_get_contents($data_dir . '/template/overall_footer.html');
 if (strpos($from_version, '3.0') === 0)
 {
 	$nav = file_get_contents($data_dir . '/template/30_nav.html');
-	$tabs = '<li id="activetab"><a href="/code-changes/3.0.0/"><span>3.0.x</span></a></li>
-	<li><a href="/code-changes/3.1.0/"><span>3.1.x</span></a></li>
-	<li><a href="/code-changes/3.2.0/"><span>3.2.x</span></a></li>';
+	$tabs = '<li id="activetab"><a href="/code-changes/3.0.13-PL1/"><span>3.0.x</span></a></li>
+	<li><a href="/code-changes/3.1.11/"><span>3.1.x</span></a></li>
+	<li><a href="/code-changes/"><span>3.2.x</span></a></li>';
 }
 else if (strpos($from_version, '3.1') === 0)
 {
 	$nav = file_get_contents($data_dir . '/template/31_nav.html');
-	$tabs = '<li><a href="/code-changes/3.0.0/"><span>3.0.x</span></a></li>
-	<li id="activetab"><a href="/code-changes/3.1.0/"><span>3.1.x</span></a></li>
-	<li><a href="/code-changes/3.2.0/"><span>3.2.x</span></a></li>';
+	$tabs = '<li><a href="/code-changes/3.0.13-PL1/"><span>3.0.x</span></a></li>
+	<li id="activetab"><a href="/code-changes/3.1.11/"><span>3.1.x</span></a></li>
+	<li><a href="/code-changes/"><span>3.2.x</span></a></li>';
 }
 else if (strpos($from_version, '3.2') === 0)
 {
 	$nav = file_get_contents($data_dir . '/template/32_nav.html');
-	$tabs = '<li><a href="/code-changes/3.0.0/"><span>3.0.x</span></a></li>
-	<li><a href="/code-changes/3.1.0/"><span>3.1.x</span></a></li>
-	<li id="activetab"><a href="/code-changes/3.2.0/"><span>3.2.x</span></a></li>';
+	$tabs = '<li><a href="/code-changes/3.0.13-PL1/"><span>3.0.x</span></a></li>
+	<li><a href="/code-changes/3.1.11/"><span>3.1.x</span></a></li>
+	<li id="activetab"><a href="/code-changes/"><span>3.2.x</span></a></li>';
 }
 
 $header = str_replace('{PREV_VERSIONS_NAV}', $nav, $header);
