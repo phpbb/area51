@@ -69,7 +69,7 @@ sphinx-versioning build -w 3.1.x -w 3.2.x -w master development "$DOCS/dev/"
 
 # Generate API documentation
 cd $PHPBBREPO
-git checkout 3.1.x
+git checkout 3.2.x
 cd phpBB
 ../composer.phar install
 cd ../build
