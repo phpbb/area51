@@ -85,6 +85,18 @@ class TrackerChart
 		return $this;
 	}
 
+	public function selectRhea()
+	{
+		$this->query['projectOrFilterId'] = 'filter-14995';
+		return $this;
+	}
+
+	public function selectRheaResolved()
+	{
+		$this->query['projectOrFilterId'] = 'filter-14996';
+		return $this;
+	}
+
 	public function days($days)
 	{
 		$this->query['daysprevious'] = $days;
