@@ -2,7 +2,7 @@
 set -e
 
 REMOTE=origin
-BRANCH=master
+BRANCH=symupdate
 
 HERE=$(dirname "$0")
 cd "$HERE/../"
@@ -14,8 +14,8 @@ then
 	./composer.phar install --no-dev --optimize-autoloader
 	app/console cache:clear --env=prod
 	app/console cache:warmup --env=prod
-	chmod -R 777 app/cache/*
-	rm -rf app/cache/prod/
-	mkdir app/cache/prod/
-	chmod -R 777 app/cache/*
+	chmod -R 777 var/cache/*
+	rm -rf var/cache/prod/
+	mkdir var/cache/prod/
+	chmod -R 777 var/cache/*
 fi

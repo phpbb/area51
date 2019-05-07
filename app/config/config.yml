@@ -3,26 +3,27 @@ imports:
     # - { resource: security.yml }
 
 framework:
-    secret:          %secret%
+    secret:          "%secret%"
     router:          { resource: "%kernel.root_dir%/config/routing.yml" }
     form:            true
     csrf_protection: true
     validation:      { enable_annotations: true }
     templating:
         engines: ['twig']
-        assets_version:         111020132212
-        assets_version_format:  %%s?v%%s
+    assets:
+        version:         111020132212
+        version_format:  "%%s?v%%s"
     session: ~
     esi: { enabled: true }
 
 # Twig Configuration
 twig:
-    debug:            %kernel.debug%
-    strict_variables: %kernel.debug%
+    debug:            "%kernel.debug%"
+    strict_variables: "%kernel.debug%"
 
 # Assetic Configuration
 assetic:
-    debug:          %kernel.debug%
+    debug:          "%kernel.debug%"
     use_controller: false
     filters:
         cssrewrite: ~

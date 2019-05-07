@@ -2,6 +2,8 @@
 
 namespace Phpbb\Area51Bundle\Controller;
 
+use Phpbb\Area51Bundle\PhpbbArea51Bundle;
+use Phpbb\Area51Bundle\TrackerChartFactory;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -28,23 +30,8 @@ class DefaultController extends Controller
     {
         $trackerStart = new \DateTime('2006-01-01T00:00:00+00:00');
 
+        /** @var TrackerChartFactory $factory */
         $factory = $this->get('tracker_chart_factory');
-
-        $olympusCreatedVsResolved = $factory->create()
-            ->selectOlympus()
-            ->createdVsResolved()
-            ->daysSince($trackerStart)
-            ->quarterly()
-            ->cumulative(true)
-            ->showUnresolvedTrend()
-            ->get();
-
-        $olympusAvgAge = $factory->create()
-            ->selectOlympus()
-            ->averageAge()
-            ->daysSince($trackerStart)
-            ->monthly()
-            ->get();
 
         $ascraeusCreatedVsResolved = $factory->create()
             ->selectAscraeus()
@@ -62,13 +49,29 @@ class DefaultController extends Controller
             ->monthly()
             ->get();
 
+        $rheaCreatedVsResolved = $factory->create()
+            ->selectRhea()
+            ->createdVsResolved()
+            ->daysSince($trackerStart)
+            ->quarterly()
+            ->cumulative(true)
+            ->showUnresolvedTrend()
+            ->get();
+
+        $rheaAvgAge = $factory->create()
+            ->selectRhea()
+            ->averageAge()
+            ->daysSince($trackerStart)
+            ->monthly()
+            ->get();
+
         return array(
             'active_tab'                    => 'stats',
 
-            'olympus_created_vs_resolved'   => $olympusCreatedVsResolved,
-            'olympus_avg_age'               => $olympusAvgAge,
             'ascraeus_created_vs_resolved'  => $ascraeusCreatedVsResolved,
             'ascraeus_avg_age'              => $ascraeusAvgAge,
+            'rhea_created_vs_resolved'      => $rheaCreatedVsResolved,
+            'rhea_avg_age'                  => $rheaAvgAge,
         );
     }
 
