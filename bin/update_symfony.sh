@@ -2,7 +2,7 @@
 set -e
 
 REMOTE=origin
-BRANCH=symupdate
+BRANCH=master
 
 HERE=$(dirname "$0")
 cd "$HERE/../"
