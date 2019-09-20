@@ -1,2 +1,2 @@
 <?php
-header('Location: /code-changes/3.2.6/');
+header('Location: /code-changes/3.2.7/');
