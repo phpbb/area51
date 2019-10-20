@@ -62,6 +62,7 @@ update_repo "$DOCREPO" 'https://github.com/phpbb/documentation.git'
 copy_phpbb_docs $PHPBBREPO "3.0.x" "$DOCS/30x/"
 copy_phpbb_docs $PHPBBREPO "3.1.x" "$DOCS/31x/"
 copy_phpbb_docs $PHPBBREPO "3.2.x" "$DOCS/32x/"
+copy_phpbb_docs $PHPBBREPO "3.3.x" "$DOCS/33x/"
 copy_phpbb_docs $PHPBBREPO "master" "$DOCS/master/"
 
 cd $DOCREPO

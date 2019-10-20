@@ -65,6 +65,22 @@ class DefaultController extends Controller
             ->monthly()
             ->get();
 
+        $rhea33CreatedVsResolved = $factory->create()
+            ->selectRhea33()
+            ->createdVsResolved()
+            ->daysSince($trackerStart)
+            ->quarterly()
+            ->cumulative(true)
+            ->showUnresolvedTrend()
+            ->get();
+
+        $rhea33AvgAge = $factory->create()
+            ->selectRhea33()
+            ->averageAge()
+            ->daysSince($trackerStart)
+            ->monthly()
+            ->get();
+
         return array(
             'active_tab'                    => 'stats',
 
@@ -72,6 +88,8 @@ class DefaultController extends Controller
             'ascraeus_avg_age'              => $ascraeusAvgAge,
             'rhea_created_vs_resolved'      => $rheaCreatedVsResolved,
             'rhea_avg_age'                  => $rheaAvgAge,
+            'rhea33_created_vs_resolved'      => $rhea33CreatedVsResolved,
+            'rhea33_avg_age'                  => $rhea33AvgAge,
         );
     }
 
