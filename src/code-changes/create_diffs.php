@@ -39,7 +39,7 @@ $user = new user();
 */
 function generate_diff_file($path)
 {
-	global $data_dir, $out_dir, $diff_mode, $from_version, $to_version, $user;
+	global $data_dir, $out_dir, $diff_mode, $from_version, $to_version;
 
 	if(file_exists($data_dir . '/versions/' . $from_version . '/' . $path))
 	{
@@ -75,33 +75,13 @@ function generate_diff_file($path)
 	$header = file_get_contents($data_dir . '/template/overall_header.html');
 	$footer = file_get_contents($data_dir . '/template/overall_footer.html');
 
-	//Set up the navigation menu
-	if (strpos($from_version, '3.0') === 0)
-	{
-		$nav = file_get_contents($data_dir . '/template/30_nav.html');
-		$tabs = '<li id="activetab"><a href="/code-changes/3.0.13-PL1/"><span>3.0.x</span></a></li>
-		<li><a href="/code-changes/3.1.11/"><span>3.1.x</span></a></li>
-		<li><a href="/code-changes/"><span>3.2.x</span></a></li>';
-	}
-	else if (strpos($from_version, '3.1') === 0)
-	{
-		$nav = file_get_contents($data_dir . '/template/31_nav.html');
-		$tabs = '<li><a href="/code-changes/3.0.13-PL1/"><span>3.0.x</span></a></li>
-		<li id="activetab"><a href="/code-changes/3.1.11/"><span>3.1.x</span></a></li>
-		<li><a href="/code-changes/"><span>3.2.x</span></a></li>';
-	}
-	else if (strpos($from_version, '3.2') === 0)
-	{
-		$nav = file_get_contents($data_dir . '/template/32_nav.html');
-		$tabs = '<li><a href="/code-changes/3.0.13-PL1/"><span>3.0.x</span></a></li>
-		<li><a href="/code-changes/3.1.11/"><span>3.1.x</span></a></li>
-		<li id="activetab"><a href="/code-changes/"><span>3.2.x</span></a></li>';
-	}
-	else
+	$navigation_data = get_navigation_data($data_dir, $from_version);
+	if (empty($navigation_data))
 	{
 		exit;
 	}
-	$header = str_replace('{PREV_VERSIONS_NAV}', $nav, $header);
+
+	$header = str_replace('{PREV_VERSIONS_NAV}', $navigation_data['nav'], $header);
 
 	//Set the active version in the navigation
 	$header = str_replace('<li><a href="/code-changes/' . $from_version . '/">', '<li id="activemenu"><a href="/code-changes/' . $from_version . '/">', $header);
@@ -110,7 +90,7 @@ function generate_diff_file($path)
 	$header = str_replace('{CURRENT_FILE}', '<div style="float: right;"><h2 style="margin-top: 0px;">File: ' . $path . '</h2></div>', $header);
 
 	//Set the active tab
-	$header = str_replace('{TABS}', $tabs, $header);
+	$header = str_replace('{TABS}', $navigation_data['tabs'], $header);
 
 	//Build the structure if necessary
 	$dir = $out_dir . '/' . $from_version . '/' . $diff_mode . '/' . $to_version;
@@ -287,6 +267,68 @@ function sort_array(&$array)
 	$array = array_merge($array, $files);
 }
 
+/**
+ * Get data for displaying navigation
+ *
+ * @param string $data_dir Data directory
+ * @param string $from_version From version for display
+ *
+ * @return array Array with tabs HTML in 'tabs' and navigation file HTML in 'nav'
+ */
+function get_navigation_data($data_dir, $from_version)
+{
+	// Latest version info for navigation purposes. Always release before actual latest version.
+	$latest_versions = [
+		'3.0'		=> '3.0.13-PL1',
+		'3.1'		=> '3.1.11',
+		'3.2'		=> '', // default URL
+		'3.3'		=> '3.3.0-b1',
+	];
+
+	//Set up the navigation menu
+	if (strpos($from_version, '3.0') === 0)
+	{
+		$nav = file_get_contents($data_dir . '/template/30_nav.html');
+		$tabs = '<li id="activetab"><a href="/code-changes/' . $latest_versions['3.0'] . '"><span>3.0.x</span></a></li>
+		<li><a href="/code-changes/' . $latest_versions['3.1'] . '"><span>3.1.x</span></a></li>
+		<li><a href="/code-changes/' . $latest_versions['3.2'] . '"><span>3.2.x</span></a></li>
+		<li><a href="/code-changes/' . $latest_versions['3.3'] . '"><span>3.3.x</span></a></li>';
+	}
+	else if (strpos($from_version, '3.1') === 0)
+	{
+		$nav = file_get_contents($data_dir . '/template/31_nav.html');
+		$tabs = '<li><a href="/code-changes/' . $latest_versions['3.0'] . '"><span>3.0.x</span></a></li>
+		<li id="activetab"><a href="/code-changes/' . $latest_versions['3.1'] . '"><span>3.1.x</span></a></li>
+		<li><a href="/code-changes/' . $latest_versions['3.2'] . '"><span>3.2.x</span></a></li>
+		<li><a href="/code-changes/' . $latest_versions['3.3'] . '"><span>3.3.x</span></a></li>';
+	}
+	else if (strpos($from_version, '3.2') === 0)
+	{
+		$nav = file_get_contents($data_dir . '/template/32_nav.html');
+		$tabs = '<li><a href="/code-changes/' . $latest_versions['3.0'] . '"><span>3.0.x</span></a></li>
+		<li><a href="/code-changes/' . $latest_versions['3.1'] . '"><span>3.1.x</span></a></li>
+		<li id="activetab"><a href="/code-changes/' . $latest_versions['3.2'] . '"><span>3.2.x</span></a></li>
+		<li><a href="/code-changes/' . $latest_versions['3.3'] . '"><span>3.3.x</span></a></li>';
+	}
+	else if (strpos($from_version, '3.3') === 0)
+	{
+		$nav = file_get_contents($data_dir . '/template/33_nav.html');
+		$tabs = '<li><a href="/code-changes/' . $latest_versions['3.0'] . '"><span>3.0.x</span></a></li>
+		<li><a href="/code-changes/' . $latest_versions['3.1'] . '"><span>3.1.x</span></a></li>
+		<li><a href="/code-changes/' . $latest_versions['3.2'] . '"><span>3.2.x</span></a></li>
+		<li id="activetab"><a href="/code-changes/' . $latest_versions['3.3'] . '"><span>3.3.x</span></a></li>';
+	}
+	else
+	{
+		return [];
+	}
+
+	return [
+		'nav'	=> $nav,
+		'tabs'	=> $tabs,
+	];
+}
+
 $ignore_folders = array('develop', 'docs', 'install', 'vendor');
 $ignore_files = array('config.php', 'composer.json', 'composer.lock');
 
@@ -333,30 +375,9 @@ $header = file_get_contents($data_dir . '/template/overall_header.html');
 $footer = '</ul>';
 $footer .= file_get_contents($data_dir . '/template/overall_footer.html');
 
-//Set the navigation menu
-if (strpos($from_version, '3.0') === 0)
-{
-	$nav = file_get_contents($data_dir . '/template/30_nav.html');
-	$tabs = '<li id="activetab"><a href="/code-changes/3.0.13-PL1/"><span>3.0.x</span></a></li>
-	<li><a href="/code-changes/3.1.11/"><span>3.1.x</span></a></li>
-	<li><a href="/code-changes/"><span>3.2.x</span></a></li>';
-}
-else if (strpos($from_version, '3.1') === 0)
-{
-	$nav = file_get_contents($data_dir . '/template/31_nav.html');
-	$tabs = '<li><a href="/code-changes/3.0.13-PL1/"><span>3.0.x</span></a></li>
-	<li id="activetab"><a href="/code-changes/3.1.11/"><span>3.1.x</span></a></li>
-	<li><a href="/code-changes/"><span>3.2.x</span></a></li>';
-}
-else if (strpos($from_version, '3.2') === 0)
-{
-	$nav = file_get_contents($data_dir . '/template/32_nav.html');
-	$tabs = '<li><a href="/code-changes/3.0.13-PL1/"><span>3.0.x</span></a></li>
-	<li><a href="/code-changes/3.1.11/"><span>3.1.x</span></a></li>
-	<li id="activetab"><a href="/code-changes/"><span>3.2.x</span></a></li>';
-}
+$navigation_data = get_navigation_data($data_dir, $from_version);
 
-$header = str_replace('{PREV_VERSIONS_NAV}', $nav, $header);
+$header = str_replace('{PREV_VERSIONS_NAV}', $navigation_data['nav'], $header);
 
 //Set up the active version in the navigation
 $header = str_replace('<li><a href="/code-changes/' . $from_version . '/">', '<li id="activemenu"><a href="/code-changes/' . $from_version . '/">', $header);
@@ -365,7 +386,7 @@ $header = str_replace('<li><a href="/code-changes/' . $from_version . '/">', '<l
 $header = str_replace('{CURRENT_FILE}', '', $header);
 
 //Set the active tab
-$header = str_replace('{TABS}', $tabs, $header);
+$header = str_replace('{TABS}', $navigation_data['tabs'], $header);
 
 $header .= '<p>The following files have been changed in the update from ' . $from_version . ' to ' . $to_version . ':</p>';
 $header .= '<ul id="browser" class="filetree">';
@@ -376,4 +397,3 @@ fwrite($fh, $header);
 fwrite($fh, $output);
 fwrite($fh, $footer);
 fclose($fh);
-?>
