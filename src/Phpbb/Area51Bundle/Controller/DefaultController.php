@@ -65,8 +65,8 @@ class DefaultController extends Controller
             ->monthly()
             ->get();
 
-        $rhea33CreatedVsResolved = $factory->create()
-            ->selectRhea33()
+        $proteusCreatedVsResolved = $factory->create()
+            ->selectProteus()
             ->createdVsResolved()
             ->daysSince($trackerStart)
             ->quarterly()
@@ -74,8 +74,8 @@ class DefaultController extends Controller
             ->showUnresolvedTrend()
             ->get();
 
-        $rhea33AvgAge = $factory->create()
-            ->selectRhea33()
+        $proteusAvgAge = $factory->create()
+            ->selectProteus()
             ->averageAge()
             ->daysSince($trackerStart)
             ->monthly()
@@ -88,8 +88,8 @@ class DefaultController extends Controller
             'ascraeus_avg_age'              => $ascraeusAvgAge,
             'rhea_created_vs_resolved'      => $rheaCreatedVsResolved,
             'rhea_avg_age'                  => $rheaAvgAge,
-            'rhea33_created_vs_resolved'      => $rhea33CreatedVsResolved,
-            'rhea33_avg_age'                  => $rhea33AvgAge,
+            'proteus_created_vs_resolved'      => $proteusCreatedVsResolved,
+            'proteus_avg_age'                  => $proteusAvgAge,
         );
     }
 

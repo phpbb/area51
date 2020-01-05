@@ -97,13 +97,13 @@ class TrackerChart
 		return $this;
 	}
 
-	public function selectRhea33()
+	public function selectProteus()
 	{
 		$this->query['projectOrFilterId'] = 'filter-15190';
 		return $this;
 	}
 
-	public function selectRhea33Resolved()
+	public function selectProteusResolved()
 	{
 		$this->query['projectOrFilterId'] = 'filter-15191';
 		return $this;
