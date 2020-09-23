@@ -68,7 +68,7 @@ copy_phpbb_docs $PHPBBREPO "master" "$DOCS/master/"
 cd $DOCREPO
 sphinx-versioning build -w 3.2.x -w 3.3.x -w master development "$DOCS/dev/"
 
-# Generate API documentation
+# Generate API documentation for 3.3.x and master
 cd $PHPBBREPO
 git checkout 3.3.x
 cd phpBB
@@ -76,3 +76,11 @@ cd phpBB
 cd ../build
 ../phpBB/vendor/bin/phing docs-all
 rsync -a --delete api/output/ "$DOCS/code/"
+
+# Generate API documentation for 3.2.x and below
+git checkout 3.2.x
+cd phpBB
+../composer.phar install
+cd ../build
+../phpBB/vendor/bin/phing docs-all
+rsync -a --delete api/output "$DOCS/code/"
