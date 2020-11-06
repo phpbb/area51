@@ -281,7 +281,7 @@ function get_navigation_data($data_dir, $from_version)
 	$latest_versions = [
 		'3.0'		=> '3.0.13-PL1',
 		'3.1'		=> '3.1.11',
-		'3.2'		=> '3.2.8',
+		'3.2'		=> '3.2.10',
 		'3.3'		=> '', // default URL
 	];
 
