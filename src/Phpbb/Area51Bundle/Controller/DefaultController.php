@@ -122,11 +122,11 @@ class DefaultController extends Controller
     public function downloadsAction()
     {
         // Make this false when the most recent release is not an RC/Alpha/Beta
-        $latestDevelopment = false;
+        $latestDevelopment = true;
 
-        $previousVersions = ['3.3.1', '3.3.0', '3.2.10', '3.2.9', '3.2.8', '3.2.7', '3.2.6', '3.2.5', '3.2.4', '3.2.3', '3.2.2', '3.2.1', '3.2.0', '3.1.12', '3.1.11', '3.1.10', '3.1.9', '3.1.8', '3.1.7-pl1', '3.1.6', '3.1.5', '3.1.4', '3.1.3', '3.1.2', '3.1.1', '3.1.0'];
-        $currentVersion = '3.3.2-RC1';
-        $mainPackageSha = 'a4ef6f6224dba721c383fd1a72c51b2d659dee5b4180fb991cd8ab35fc2f5857';
+        $previousVersions = ['3.3.2', '3.3.1', '3.3.0', '3.2.10', '3.2.9', '3.2.8', '3.2.7', '3.2.6', '3.2.5', '3.2.4', '3.2.3', '3.2.2', '3.2.1', '3.2.0', '3.1.12', '3.1.11', '3.1.10', '3.1.9', '3.1.8', '3.1.7-pl1', '3.1.6', '3.1.5', '3.1.4', '3.1.3', '3.1.2', '3.1.1', '3.1.0'];
+        $currentVersion = '3.3.3-RC1';
+        $mainPackageSha = 'a0453ffa1ca8ce61d4fbc761025037157ffc7cfc9f56cb0e14eec7c15424587a';
         $currentBranch = '3.3/unstable';
         $currentVersionFiles =  'https://download.phpbb.com/pub/release/' . $currentBranch
             . '/' . $currentVersion . '/';
