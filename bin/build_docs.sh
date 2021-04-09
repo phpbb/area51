@@ -76,12 +76,3 @@ cd phpBB
 cd ../build
 ../phpBB/vendor/bin/phing docs-all
 rsync -a --delete api/output/ "$DOCS/code/"
-
-# Generate API documentation for 3.2.x and below
-cd $PHPBBREPO
-git checkout 3.2.x
-cd phpBB
-../composer.phar install
-cd ../build
-../phpBB/vendor/bin/phing docs-all
-rsync -a --delete api/output "$DOCS/code/"
