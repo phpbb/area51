@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+exec {BASH_XTRACEFD}>&1
 set -ex
 
 ROOT=`cd $(dirname "$BASH_SOURCE"); cd ..; pwd`
