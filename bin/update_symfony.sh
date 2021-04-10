@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+exec {BASH_XTRACEFD}>&1
 set -e
 
 REMOTE=origin
