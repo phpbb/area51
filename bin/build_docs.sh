@@ -67,7 +67,11 @@ copy_phpbb_docs $PHPBBREPO "3.3.x" "$DOCS/33x/"
 copy_phpbb_docs $PHPBBREPO "master" "$DOCS/master/"
 
 cd $DOCREPO
-sphinx-versioning build -w 3.2.x -w 3.3.x -w master development "$DOCS/dev/"
+# Create documentation and copy master to main directory.
+# Sphinx-multiversion does no longer create a copy of the master version
+# in the main directory so we have to manually copy the files.
+sphinx-multiversion development "$DOCS/dev/"
+cp -r "$DOCS/dev/master/*" "$DOCS/dev/"
 
 # Generate API documentation for 3.3.x and master
 cd $PHPBBREPO
