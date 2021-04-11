@@ -69,9 +69,9 @@ copy_phpbb_docs $PHPBBREPO "master" "$DOCS/master/"
 cd $DOCREPO
 # Create documentation and copy master to main directory.
 # Sphinx-multiversion does no longer create a copy of the master version
-# in the main directory so we have to manually copy the files.
+# in the main directory so we have to redirect people with an index.html
 sphinx-multiversion development "$DOCS/dev/"
-cp -r "$DOCS/dev/master/*" "$DOCS/dev/"
+cp development/_templates/index.html "$DOCS/dev/"
 
 # Generate API documentation for 3.3.x and master
 cd $PHPBBREPO
