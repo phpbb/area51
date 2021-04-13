@@ -70,7 +70,7 @@ cd $DOCREPO
 # Create documentation and copy master to main directory.
 # Sphinx-multiversion does no longer create a copy of the master version
 # in the main directory so we have to redirect people with an index.html
-sphinx-multiversion development "$DOCS/dev/"
+/usr/local/bin/sphinx-multiversion development "$DOCS/dev/"
 cp development/_templates/index.html "$DOCS/dev/"
 
 # Generate API documentation for 3.3.x and master
