@@ -44,20 +44,19 @@ copy_phpbb_docs()
 
 # $1 repository directory
 # $2 branch name
-# $3 target directory
-make_sphinx_docs()
+update_sphinx_docs()
 {
     cd $1
-	mkdir -p "$3"
 	git checkout --force "$2"
 	git reset --hard "origin/$2"
-    cd development
-    make html
-	rsync -a --delete '_build/html/' "$3"
 }
 
 update_repo "$PHPBBREPO" 'https://github.com/phpbb/phpbb.git' "$ROOT/area51-phpbb3"
 update_repo "$DOCREPO" 'https://github.com/phpbb/documentation.git'
+
+update_sphinx_docs $DOCREPO "3.2.x"
+update_sphinx_docs $DOCREPO "3.3.x"
+update_sphinx_docs $DOCREPO "master"
 
 # Copy phpBB docs directory
 copy_phpbb_docs $PHPBBREPO "3.0.x" "$DOCS/30x/"
