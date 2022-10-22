@@ -124,9 +124,9 @@ class DefaultController extends Controller
         // Make this false when the most recent release is not an RC/Alpha/Beta
         $latestDevelopment = false;
 
-        $previousVersions = ['3.3.7', '3.3.6', '3.3.5', '3.3.4', '3.3.3', '3.3.2', '3.3.1', '3.3.0', '3.2.10', '3.2.9', '3.2.8', '3.2.7', '3.2.6', '3.2.5', '3.2.4', '3.2.3', '3.2.2', '3.2.1', '3.2.0', '3.1.12', '3.1.11', '3.1.10', '3.1.9', '3.1.8', '3.1.7-pl1', '3.1.6', '3.1.5', '3.1.4', '3.1.3', '3.1.2', '3.1.1', '3.1.0'];
-        $currentVersion = '3.3.8-RC1';
-        $mainPackageSha = 'bcca080cefb16cbe744fed78b151792a585aa4b372caf04af147a49a3b47ed26';
+        $previousVersions = ['3.3.8', '3.3.7', '3.3.6', '3.3.5', '3.3.4', '3.3.3', '3.3.2', '3.3.1', '3.3.0', '3.2.10', '3.2.9', '3.2.8', '3.2.7', '3.2.6', '3.2.5', '3.2.4', '3.2.3', '3.2.2', '3.2.1', '3.2.0', '3.1.12', '3.1.11', '3.1.10', '3.1.9', '3.1.8', '3.1.7-pl1', '3.1.6', '3.1.5', '3.1.4', '3.1.3', '3.1.2', '3.1.1', '3.1.0'];
+        $currentVersion = '3.3.9-RC1';
+        $mainPackageSha = 'f94ea2cbccc987a029800b5904e1a7596b5343fab5f80d30315f20ecda0b157a';
         $currentBranch = '3.3/unstable';
         $currentVersionFiles =  'https://download.phpbb.com/pub/release/' . $currentBranch
             . '/' . $currentVersion . '/';
