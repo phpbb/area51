@@ -20,7 +20,7 @@ fi
 # Clone the repository
 if [ ! -d "$datadir/repo/phpBB" ];
 then
-	git clone git://github.com/phpbb/phpbb.git "$datadir"/repo
+	git clone git@github.com:phpbb/phpbb.git "$datadir"/repo
 	code=$?
 	if [ $code -ne 0 ];
 	then
