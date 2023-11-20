@@ -35,6 +35,7 @@
   },
   "extra": {
     "extra": {
+      "public-dir": "web",
       "symfony-var-dir": "var",
       "symfony-bin-dir": "bin",
       "symfony-assets-install": "relative"
