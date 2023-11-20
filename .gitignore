@@ -8,3 +8,8 @@ vendor
 *.log
 bin/doctrine*
 app/config/parameters.yml
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###

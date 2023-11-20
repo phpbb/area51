@@ -16,29 +16,19 @@
     "symfony/assetic-bundle": "~2.3",
     "symfony/monolog-bundle": "~3.4",
     "symfony/swiftmailer-bundle": "~3.2",
-    "symfony/symfony": "~3.4",
-    "symfony/http-kernel": "~3.4",
     "twig/extensions": "~1.0",
-    "qafoolabs/profiler": "@stable"
+    "qafoolabs/profiler": "@stable",
+    "symfony/flex": "^1.21"
   },
   "require-dev": {
     "phpunit/phpunit": "~7.5",
     "symfony/web-server-bundle": "~3.4"
   },
-  "scripts": {
-    "post-install-cmd": [
-      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
-    ],
-    "post-update-cmd": [
-      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
-    ]
-  },
   "config": {
-    "bin-dir": "bin"
+    "bin-dir": "bin",
+    "allow-plugins": {
+      "symfony/flex": true
+    }
   },
   "extra": {
     "extra": {
