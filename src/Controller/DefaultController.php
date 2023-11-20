@@ -2,36 +2,30 @@
 
 namespace App\Controller;
 
-use Phpbb\Area51Bundle\PhpbbArea51Bundle;
-use Phpbb\Area51Bundle\TrackerChartFactory;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-class DefaultController extends Controller
+class DefaultController extends AbstractController
 {
     /**
      * @Route("/", name="index")
-     * @Template()
      */
-    public function indexAction()
+    public function indexAction(): Response
     {
-        return array(
+        return $this->render('default/index.html.twig', [
             'active_tab'    => 'index',
-        );
+        ]);
     }
 
     /**
      * @Route("/stats/", name="stats")
-     * @Template()
      */
-    public function statsAction()
+    public function statsAction(\App\TrackerChartFactory $factory): Response
     {
         $trackerStart = new \DateTime('2006-01-01T00:00:00+00:00');
-
-        /** @var TrackerChartFactory $factory */
-        $factory = $this->get('tracker_chart_factory');
 
         $ascraeusCreatedVsResolved = $factory->create()
             ->selectAscraeus()
@@ -81,7 +75,7 @@ class DefaultController extends Controller
             ->monthly()
             ->get();
 
-        return array(
+        return $this->render('default/stats.html.twig', [
             'active_tab'                    => 'stats',
 
             'ascraeus_created_vs_resolved'  => $ascraeusCreatedVsResolved,
@@ -90,26 +84,25 @@ class DefaultController extends Controller
             'rhea_avg_age'                  => $rheaAvgAge,
             'proteus_created_vs_resolved'      => $proteusCreatedVsResolved,
             'proteus_avg_age'                  => $proteusAvgAge,
-        );
+        ]);
     }
 
     /**
      * @Route("/projects/", name="projects")
-     * @Template()
      */
-    public function projectsAction()
+    public function projectsAction(): Response
     {
-        return array(
+        return $this->render('default/projects.html.twig', [
             'active_tab'    => 'projects',
-        );
+        ]);
     }
 
     /**
      * @Route("/docs{path}", requirements={"path"=".*"}, defaults={"path"=""})
      */
-    public function docsRedirectAction($path)
+    public function docsRedirectAction($path): RedirectResponse
     {
-        if (preg_match('#^/3#', $path)) {
+        if (str_starts_with($path, '/3')) {
             return $this->redirect('http://area51.phpbb.com/docs/30x'.$path, 301);
         }
         return $this->redirect($this->generateUrl('index'), 301);
@@ -117,9 +110,8 @@ class DefaultController extends Controller
 
     /**
      * @Route("/downloads/", name="downloads")
-     * @Template()
      */
-    public function downloadsAction()
+    public function downloadsAction(): Response
     {
         // Make this false when the most recent release is not an RC/Alpha/Beta
         $latestDevelopment = true;
@@ -133,14 +125,15 @@ class DefaultController extends Controller
         $currentUpgradeFiles =  'https://download.phpbb.com/pub/release/' . $currentBranch
             . '/' . $currentVersion . '/';
 
-        return array(
+        return $this->render('default/downloads.html.twig', [
             'active_tab'            => 'downloads',
+            'later'                 => false,
             'latestDevelopment'     => $latestDevelopment,
             'previousVersions'       => $previousVersions,
             'currentVersion'        => $currentVersion,
             'currentVersionFiles'   => $currentVersionFiles,
             'currentUpgradeFiles'   => $currentUpgradeFiles,
             'mainPackageSha'    => $mainPackageSha,
-        );
+        ]);
     }
 }
