@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpbb\Area51Bundle\Controller;
+namespace App\Controller;
 
 use Phpbb\Area51Bundle\PhpbbArea51Bundle;
 use Phpbb\Area51Bundle\TrackerChartFactory;

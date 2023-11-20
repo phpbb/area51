@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpbb\Area51Bundle;
+namespace App;
 
 class TrackerChartFactory
 {
