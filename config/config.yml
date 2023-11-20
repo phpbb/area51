@@ -59,3 +59,8 @@ assetic:
 
 sensio_framework_extra:
     cache: { annotations: true }
+
+services:
+    tracker_chart_factory:
+        class: App\TrackerChartFactory
+        arguments: ["%tracker_chart.root_path%"]
