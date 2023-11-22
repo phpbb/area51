@@ -282,7 +282,7 @@ class diff_engine
 				$matches = $ymatches[$line];
 
 				reset($matches);
-				while (list(, $y) = each($matches))
+				foreach ($matches as $y)
 				{
 					if (empty($this->in_seq[$y]))
 					{
@@ -293,7 +293,7 @@ class diff_engine
 				}
 
 				// no reset() here
-				while (list(, $y) = each($matches))
+				foreach ($matches as $y)
 				{
 					if ($y > $this->seq[$k - 1])
 					{
@@ -550,5 +550,3 @@ class diff_engine
 		}
 	}
 }
-
-?>
