@@ -282,7 +282,7 @@ class diff_engine
 				$matches = $ymatches[$line];
 
 				reset($matches);
-				foreach ($matches as $y)
+				while ($y = current($matches))
 				{
 					if (empty($this->in_seq[$y]))
 					{
@@ -290,10 +290,11 @@ class diff_engine
 						$ymids[$k] = $ymids[$k - 1];
 						break;
 					}
+					next($matches);
 				}
 
 				// no reset() here
-				foreach ($matches as $y)
+				while ($y= current($matches))
 				{
 					if ($y > $this->seq[$k - 1])
 					{
@@ -307,6 +308,7 @@ class diff_engine
 						$k = $this->_lcs_pos($y);
 						$ymids[$k] = $ymids[$k - 1];
 					}
+					next($matches);
 				}
 			}
 		}
