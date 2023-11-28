@@ -810,10 +810,7 @@ class diff_renderer_side_by_side extends diff_renderer
 
 	function _deleted($lines)
 	{
-		if (is_array($lines))
-		{
-			array_walk($lines, array(&$this, '_perform_delete'));
-		}
+		array_walk($lines, array(&$this, '_perform_delete'));
 	}
 
 	function _perform_delete($line)

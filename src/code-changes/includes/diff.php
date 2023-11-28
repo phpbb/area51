@@ -415,7 +415,7 @@ class diff_op_copy extends diff_op
 */
 class diff_op_delete extends diff_op
 {
-	public function __constuct($lines)
+	public function __construct($lines)
 	{
 		$this->orig = $lines;
 		$this->final = false;
