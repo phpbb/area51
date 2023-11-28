@@ -1,0 +1,7 @@
+{% extends "layout.html.twig" %}
+
+{% block body %}
+<div>
+    {{ render(controller('PhpbbArea51Bundle:Default:contributorsList', {}), { 'strategy': 'esi'}) }}
+</div>
+{% endblock %}

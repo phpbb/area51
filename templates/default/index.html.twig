@@ -1,0 +1,96 @@
+{% extends "layout.html.twig" %}
+
+{% block body %}
+<div class="clearfix">
+    <h2>Get Involved</h2>
+    <p>You can help the project in many ways. Pick what suits your skills best, all contributions are much appreciated by the rest of the community.
+        More detailed information on how to go about contributing is available on our <a href="https://www.phpbb.com/get-involved/" title="Get Involved">Get Involved</a> page.</p>
+    <ul class="contribution-list">
+        <li>
+            <p><b>Report bugs</b><br />
+            phpBB can only be improved if the developers are aware of the problems users encounter. Detailed descriptions of problems help contributors solve them quickly.</p>
+        </li>
+        <li>
+            <p><b>Reproduce bugs and verify fixes</b><br />
+            Help identify incorrectly reported bugs to speed up development. Test bugfixes to ensure they work as expected and do not have unintended side effects.</p>
+        </li>
+        <li class="line-break">
+            <p><b>Submit patches</b><br />
+            Know how to work with PHP, CSS or HTML? Fix a bug or implement a feature yourself and prepare your patch to be merged into phpBB.</p>
+        </li>
+        <li>
+            <p><b>Review patches</b><br />
+            Help identify problems before they go into a released version of phpBB and reach our users. Review and test other contributors' patches to identify problems.</p>
+        </li>
+        <li class="line-break">
+            <p><b>Discussing existing RFCs</b><br />
+            RFCs are enhancement proposals for future versions of phpBB. You can provide comments on these proposals as well as collaborate on their implementation at the Development Discussion Board.</p>
+        </li>
+        <li>
+            <p><b>Create new RFCs</b><br />
+            Propose a new feature or a change in behaviour for discussion with the rest of the community. All big changes need to go through this process on the Development Discussion Board.</p>
+        </li>
+        <li class="line-break full-line">
+            <p><b>Participate in development IRC channel and Area51</b><br />
+            phpBB's development is public. When developers want to discuss something, have a question or want to request feedback they do it either in the development IRC channel (<a href="irc://irc.libera.chat/phpbb-dev" title="Connect to #phpbb-dev">#phpbb-dev on libera.chat</a>) or on the Development Discussion Board. Everyone is welcome to participate in these discussions to whatever extent they want.</p>
+        </li>
+    </ul>
+</div>
+
+<div class="clearfix">
+    <h2>Development Sites &amp; Tools</h2>
+    <ul class="section-list">
+        <li>
+            <a href="/phpBB" title="Development Discussion"><img src="{{ asset('images/development-discussion.png') }}" title="Development Discussion" alt="Development Discussion" /></a>
+            <h2>Development Discussion</h2>
+            <p>All proposals for new features and code changes are discussed in this forum. It runs the latest unstable version of phpBB allowing you to test upcoming features.</p>
+        </li>
+        <li>
+            <a href="https://tracker.phpbb.com/" title="Tracker"><img src="{{ asset('images/tracker.png') }}" title="Tracker" alt="Tracker" /></a>
+            <h2>Issue Tracker</h2>
+            <p>If you found a bug in phpBB this is the place to report it. If you're not sure if the behaviour you found is really a bug try asking for help in the <a href="https://www.phpbb.com/community/viewforum.php?f=46" title="Support Forum">Support Forum</a> first.</p>
+        </li>
+        <li>
+            <a href="https://github.com/phpbb/" title="GitHub"><img src="{{ asset('images/github.png') }}" title="GitHub" alt="GitHub" /></a>
+            <h2>GitHub</h2>
+            <p>phpBB's source code is hosted in <a href="https://git-scm.org/" title="Git">Git</a> repositories at GitHub. You can also find a number of other tools for phpBB or MOD development there.</p>
+        </li>
+
+        <li class="line-break">
+            <a href="https://bamboo.phpbb.com/" title="Continuous Integration"><img src="{{ asset('images/ci.png') }}" title="Continuous Integration" alt="Continuous Integration" /></a>
+            <h2>Continuous Integration</h2>
+            <p>phpBB is continuously tested against a large suite of automated tests to ensure we deliver a high quality product. <a href="https://bamboo.phpbb.com">Bamboo</a> takes care of running the tests and packaging nightly development packages, while <a href="https://travis-ci.org/#!/phpbb/phpbb">Travis</a> tests proposed changes before merging them in.</p>
+            <ul>
+                <li><a href="https://bamboo.phpbb.com/browse/PHPBB3-DD32/latestSuccessful/artifact/P5SP/Release-Files/">Rhea (3.2.x) Nightly</a></li>
+                <li><a href="https://bamboo.phpbb.com/browse/PHPBB3-DD33/latestSuccessful/artifact/P5SP/Release-Files/">Proteus (3.3.x) Nightly</a></li>
+                <li><a href="https://bamboo.phpbb.com/browse/PHPBB3-DDM/latestSuccessful/artifact/P5SP/Release-Files/">master (4.0.x) Nightly</a></li>
+            </ul>
+        </li>
+        <li>
+            <img src="{{ asset('images/coding-style.png') }}" title="Coding Guidelines" alt="Coding Guidelines" />
+            <h2>Coding Guidelines</h2>
+            <p>phpBB Coding Guidelines for each version.</p>
+            <ul>
+                <li><a href="/docs/32x/coding-guidelines.html">Rhea (3.2.x) Guide</a></li>
+                <li><a href="/docs/33x/coding-guidelines.html">Proteus (3.3.x) Guide</a></li>
+                <li><a href="/docs/master/coding-guidelines.html">master (4.0.x-dev) Guide</a></li>
+            </ul>
+        </li>
+        <li>
+            <img src="{{ asset('images/api.png') }}" title="API Documentation" alt="API Documentation" />
+            <h2>API Documentation</h2>
+            <p>Automatically generated documentation for phpBB APIs - always up to date.</p>
+            <ul>
+                <li><a href="/docs/code/3.2.x/">Rhea (3.2.x) Docs</a></li>
+                <li><a href="/docs/code/3.3.x/">Proteus (3.3.x) Docs</a></li>
+                <li><a href="/docs/code/master/">master (4.0.x-dev) Docs</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="/code-changes/" title="Code Changes"><img src="{{ asset('images/code-changes.png') }}" title="Code Changes" alt="Code Changes" /></a>
+            <h2>Code Changes</h2>
+            <p>The file changes that were made between each release of phpBB.</p>
+        </li>
+    </ul>
+</div>
+{% endblock %}
