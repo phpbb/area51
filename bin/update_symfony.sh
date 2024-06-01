@@ -13,8 +13,8 @@ if [ `git rev-parse "$BRANCH"` != `git rev-parse "$REMOTE/$BRANCH"` ]
 then
 	git reset --hard "$REMOTE/$BRANCH"
 	./composer.phar install --no-dev --optimize-autoloader
-	app/console cache:clear --env=prod
-	app/console cache:warmup --env=prod
+	bin/console cache:clear --env=prod
+	bin/console cache:warmup --env=prod
 	chmod -R 777 var/cache/*
 	rm -rf var/cache/prod/
 	mkdir var/cache/prod/
