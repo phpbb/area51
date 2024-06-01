@@ -12,8 +12,8 @@ class DefaultControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/');
         $response = $client->getResponse();
 
-        $this->assertContains('Get Involved', $crawler->filter('#content h2')->text());
-        $this->assertEquals($response->getStatusCode(), 200, 'Response Code Check');
+        $this->assertStringContainsString('Get Involved', $crawler->filter('#content h2')->text());
+        $this->assertEquals(200, $response->getStatusCode(), 'Response Code Check');
     }
 
     /**
@@ -27,18 +27,18 @@ class DefaultControllerTest extends WebTestCase
 
         if ($check)
         {
-            $this->assertEquals($response->getStatusCode(), 200, 'Response Code Check');
+            $this->assertEquals(200, $response->getStatusCode(), 'Response Code Check');
         }
     }
 
-    public function explosionProvider()
+    public function explosionProvider(): array
     {
-        return array(
-            array('/'),
-            array('/stats/', false),
-            array('/downloads/'),
-            array('/projects/'),
+        return [
+            ['/'],
+            ['/stats/'],
+            ['/downloads/'],
+            ['/projects/'],
             //array('/contributors/'),
-        );
+        ];
     }
 }
