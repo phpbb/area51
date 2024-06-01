@@ -1,0 +1,43 @@
+name: Test Area51
+
+on:
+    push:
+        branches:
+            - master
+    pull_request:
+        branches:
+            - master
+
+jobs:
+    test-area51:
+        strategy:
+            matrix:
+                include:
+                    - php: '8.1'
+                    - php: '8.2'
+                    - php: '8.3'
+
+        name: Test Area51 - ${{ matrix.php }}
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
+              with:
+                fetch-depth: 100
+
+            - name: Setup PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                php-version: ${{ matrix.php }}
+                extensions: dom, curl, libxml, mbstring, zip, pcntl, intl, gd, exif, iconv
+                coverage: none
+
+            - name: Setup environment for dev-hooks
+              env:
+                PHP_VERSION: ${{ matrix.php }}
+              run: |
+                php composer.phar install --no-interaction
+
+            - name: Run unit tests
+              run: |
+                php bin/phpunit --verbose --stop-on-error
