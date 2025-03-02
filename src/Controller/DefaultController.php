@@ -114,11 +114,11 @@ class DefaultController extends AbstractController
     public function downloadsAction(): Response
     {
         // Make this false when the most recent release is not an RC/Alpha/Beta
-        $latestDevelopment = false;
+        $latestDevelopment = true;
 
-        $previousVersions = ['3.3.13', '3.3.12', '3.3.11', '3.3.10', '3.3.9', '3.3.8', '3.3.7', '3.3.6', '3.3.5', '3.3.4', '3.3.3', '3.3.2', '3.3.1', '3.3.0', '3.2.10', '3.2.9', '3.2.8', '3.2.7', '3.2.6', '3.2.5', '3.2.4', '3.2.3', '3.2.2', '3.2.1', '3.2.0', '3.1.12', '3.1.11', '3.1.10', '3.1.9', '3.1.8', '3.1.7-pl1', '3.1.6', '3.1.5', '3.1.4', '3.1.3', '3.1.2', '3.1.1', '3.1.0'];
-        $currentVersion = '3.3.14-RC1';
-        $mainPackageSha = 'b69716053bd9e6637980313f683a81f518808c922758cc672d5314fc8e2e7364';
+        $previousVersions = ['3.3.14', '3.3.13', '3.3.12', '3.3.11', '3.3.10', '3.3.9', '3.3.8', '3.3.7', '3.3.6', '3.3.5', '3.3.4', '3.3.3', '3.3.2', '3.3.1', '3.3.0', '3.2.10', '3.2.9', '3.2.8', '3.2.7', '3.2.6', '3.2.5', '3.2.4', '3.2.3', '3.2.2', '3.2.1', '3.2.0', '3.1.12', '3.1.11', '3.1.10', '3.1.9', '3.1.8', '3.1.7-pl1', '3.1.6', '3.1.5', '3.1.4', '3.1.3', '3.1.2', '3.1.1', '3.1.0'];
+        $currentVersion = '3.3.15-RC1';
+        $mainPackageSha = 'c92312e28db0000fffa5d25acb73ff1fca967997aea2ca3754d515497cd25a82';
         $currentBranch = '3.3/unstable';
         $currentVersionFiles =  'https://download.phpbb.com/pub/release/' . $currentBranch
             . '/' . $currentVersion . '/';
