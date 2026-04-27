@@ -116,9 +116,9 @@ class DefaultController extends AbstractController
         // Make this false when the most recent release is not an RC/Alpha/Beta
         $latestDevelopment = true;
 
-        $previousVersions = ['3.3.15', '3.2.10'];
-        $currentVersion = '4.0.0-a1';
-        $mainPackageSha = 'c78fe91cae5684cd02532ad25df0b80cac5db5bc8deba7b92fd6100bdffea898';
+        $previousVersions = ['3.3.16', '3.2.10'];
+        $currentVersion = '4.0.0-a2';
+        $mainPackageSha = '0555531d70b578001bcb248a8cf8e25266d078a47456a49a89ced71afb4ec27c';
         $currentBranch = '4.0/unstable';
         $currentVersionFiles =  'https://download.phpbb.com/pub/release/' . $currentBranch
             . '/' . $currentVersion . '/';
